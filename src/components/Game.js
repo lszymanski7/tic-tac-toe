@@ -1,13 +1,13 @@
 import React from 'react'
 import Footer from './Footer'
 import Header from './Header'
-import Scoreboard from './Scoreboard'
+import Score from './Score'
 
 const Game = () => {
     return (
         <div className="flexbox-column fullscreen">
             <Header />
-            <Scoreboard />
+            <Score />
             <Footer />
         </div>
     )

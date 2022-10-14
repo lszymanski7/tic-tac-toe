@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Scoreboard = () => {
+const Score = () => {
     return (
         <div className="flexbox-row">
             <div className="flexbox-column">
@@ -19,4 +19,4 @@ const Scoreboard = () => {
     )
 }
 
-export { Scoreboard as default }
+export { Score as default }
