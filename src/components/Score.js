@@ -8,7 +8,7 @@ const Score = () => {
                 <span>0</span>
             </div>
             <div className="flexbox-column">
-                <span>Draw</span>
+                <span>Tie</span>
                 <span>1</span>
             </div>
             <div className="flexbox-column">
