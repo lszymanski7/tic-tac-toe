@@ -1,22 +1,23 @@
 import React from 'react'
+import Cell from './Cell'
 
 const Board = () => {
     return (
         <div className="flexbox-row">
             <div className="flexbox-column">
-                <button>Square 0</button>
-                <button>Square 3</button>
-                <button>Square 6</button>
+                <Cell />
+                <Cell />
+                <Cell />
             </div>
             <div className="flexbox-column">
-                <button>Square 1</button>
-                <button>Square 4</button>
-                <button>Square 7</button>
+                <Cell />
+                <Cell />
+                <Cell />
             </div>
             <div className="flexbox-column">
-                <button>Square 2</button>
-                <button>Square 5</button>
-                <button>Square 8</button>
+                <Cell />
+                <Cell />
+                <Cell />
             </div>
         </div>
     )
