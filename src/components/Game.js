@@ -3,27 +3,36 @@ import Board from './Board'
 import Footer from './Footer'
 import Header from './Header'
 import Score from './Score'
-import checkWinner from '../utils/game-rules'
+
+// ================================================================================================
+// Game Info
+// ================================================================================================
+// Board: 3x3
+// Score: Player 1 (X) - Draw - Player 2 (O)
+// Status: Start - Active - End
 
 const Game = () => {
-    const [board, setBoard] = useState(['X', 'O', '', 'X', 'O', '', 'X', '', ''])
+    const [board, setBoard] = useState(Array(9).fill(null))
     const [score, setScore] = useState({
         draw: 0,
         player1: 0,
         player2: 0
     })
-    
-    const winner = checkWinner(board)
+    const [status, setStatus] = useState('Start')
+    const [player, setPlayer] = useState('X')
+    const [winner, setWinner] = useState(null)
 
-    console.log(board)
-    console.log(score)
-    console.log(winner)
+    console.log('Board:', board)
+    console.log('Score:', score)
+    console.log('Status:', status)
+    console.log('Player:', player)
+    console.log('Winner:', winner)
 
     return (
         <div className="flexbox-column fullscreen">
             <Header />
             <Score score={score} />
-            <Board board={board} setBoard={setBoard} />
+            <Board board={board} />
             <Footer />
         </div>
     )
