@@ -1,0 +1,32 @@
+// ================================================================================================
+// Cell styles
+// ================================================================================================
+
+.cell {
+  line-height: 0;
+
+  &.top {
+    border-top: 8px solid map-get($colors, 'basic', 'black');
+  }
+  
+  &.right {
+    border-right: 8px solid map-get($colors, 'basic', 'black');
+  }
+
+  &.bottom {
+    border-bottom: 8px solid map-get($colors, 'basic', 'black');
+  }
+  
+  &.left {
+    border-left: 8px solid map-get($colors, 'basic', 'black');
+  }
+}
+
+.cell__button {
+  background: none;
+  border: 0;
+  height: 152px;
+  margin: 0;
+  padding: 0;
+  width: 152px;
+}
