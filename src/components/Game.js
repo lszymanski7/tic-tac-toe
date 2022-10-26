@@ -20,13 +20,23 @@ const Game = () => {
     })
     const [status, setStatus] = useState('Start')
     const [player, setPlayer] = useState('X')
-    const [winner, setWinner] = useState('X')
+    const [winner, setWinner] = useState(null)
 
     console.log('Board:', board)
     console.log('Score:', score)
     console.log('Status:', status)
     console.log('Player:', player)
     console.log('Winner:', winner)
+
+    const updateScore = () => {
+        if (winner.symbol === 'X') {
+            setScore({...score, player1: score.player1 + 1})
+        } else if (winner.symbol === 'O') {
+            setScore({...score, player2: score.player2 + 1})
+        } else {
+            setScore({...score, draw: score.draw + 1})
+        }
+    }
 
     const updateStatus = () => {
         const emptyCells = board.filter((cell) => cell === null).length
@@ -46,6 +56,10 @@ const Game = () => {
         console.log('Index:', index)
         updateStatus()
         updatePlayer()
+
+        if (winner !== null) {
+            updateScore()
+        }
     }
 
     return (
