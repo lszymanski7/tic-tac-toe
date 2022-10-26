@@ -3,6 +3,7 @@ import Board from './Board'
 import Footer from './Footer'
 import Header from './Header'
 import Score from './Score'
+import checkWinner from './../utils/game-rules'
 
 // ================================================================================================
 // Game Info
@@ -10,9 +11,11 @@ import Score from './Score'
 // Board: 3x3
 // Score: Player 1 (X) - Draw - Player 2 (O)
 // Status: Active - Over
+// Player: X - O
+// Winner: X - O - None
 
 const Game = () => {
-    const [board, setBoard] = useState(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'])
+    const [board, setBoard] = useState(['X', 'O', 'X', 'O', 'X', 'O', 'O', 'O', 'X'])
     const [score, setScore] = useState({
         draw: 0,
         player1: 0,
@@ -20,7 +23,7 @@ const Game = () => {
     })
     const [status, setStatus] = useState('Active')
     const [player, setPlayer] = useState('X')
-    const [winner, setWinner] = useState(null)
+    const [winner, setWinner] = useState('None')
 
     console.log('Board:', board)
     console.log('Score:', score)
@@ -42,10 +45,13 @@ const Game = () => {
 
     const updatePlayer = () => (player === 'X' ? setPlayer('O') : setPlayer('X'))
 
+    const updateWinner = () => setWinner(checkWinner(board))
+
     const handleClick = (index) => {
         console.log('Index:', index)
         updateStatus()
         updatePlayer()
+        updateWinner()
 
         if (winner !== null) {
             updateScore()
