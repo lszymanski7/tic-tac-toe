@@ -1,7 +1,7 @@
 {
     "name": "tic-tac-toe",
     "version": "1.0.0",
-    "description": "Tic-Tac-Toe is a simple strategy game played by two players. Each of them aims to win by covering three squares on one line with the same sign.",
+    "description": "Tic-Tac-Toe is a simple strategy game played by two players. Each of them aims to win by covering three cells on one line with the same symbol.",
     "author": "Łukasz Szymański",
     "license": "MIT",
     "main": "src/index.js",
@@ -31,8 +31,7 @@
         "@csstools/normalize.css": "^12.0.0",
         "express": "^4.18.1",
         "react": "^18.1.0",
-        "react-dom": "^18.1.0",
-        "react-modal": "^3.15.1"
+        "react-dom": "^18.1.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.19.3",
