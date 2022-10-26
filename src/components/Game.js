@@ -12,7 +12,7 @@ import Score from './Score'
 // Status: Start - Active - End
 
 const Game = () => {
-    const [board, setBoard] = useState(Array(9).fill(null))
+    const [board, setBoard] = useState(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'])
     const [score, setScore] = useState({
         draw: 0,
         player1: 0,
@@ -20,7 +20,7 @@ const Game = () => {
     })
     const [status, setStatus] = useState('Start')
     const [player, setPlayer] = useState('X')
-    const [winner, setWinner] = useState(null)
+    const [winner, setWinner] = useState('X')
 
     console.log('Board:', board)
     console.log('Score:', score)
@@ -28,10 +28,23 @@ const Game = () => {
     console.log('Player:', player)
     console.log('Winner:', winner)
 
+    const updateStatus = () => {
+        const emptyCells = board.filter((cell) => cell === null).length
+
+        if (emptyCells === 9) {
+            setStatus('Start')
+        } else if (winner !== null) {
+            setStatus('End')
+        } else {
+            setStatus('Active')
+        }
+    }
+
     const updatePlayer = () => (player === 'X' ? setPlayer('O') : setPlayer('X'))
 
     const handleClick = (index) => {
         console.log('Index:', index)
+        updateStatus()
         updatePlayer()
     }
 
