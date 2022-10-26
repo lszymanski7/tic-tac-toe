@@ -7,9 +7,6 @@ const Header = () => {
         <header>
             <div className="flexbox-column">
                 <h1>{title}</h1>
-                <label>
-                    <input type="checkbox" />
-                </label>
             </div>
         </header>
     )
