@@ -9,7 +9,7 @@ import Score from './Score'
 // ================================================================================================
 // Board: 3x3
 // Score: Player 1 (X) - Draw - Player 2 (O)
-// Status: Start - Active - End
+// Status: Active - Over
 
 const Game = () => {
     const [board, setBoard] = useState(['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'])
@@ -18,7 +18,7 @@ const Game = () => {
         player1: 0,
         player2: 0
     })
-    const [status, setStatus] = useState('Start')
+    const [status, setStatus] = useState('Active')
     const [player, setPlayer] = useState('X')
     const [winner, setWinner] = useState(null)
 
@@ -30,25 +30,15 @@ const Game = () => {
 
     const updateScore = () => {
         if (winner.symbol === 'X') {
-            setScore({...score, player1: score.player1 + 1})
+            setScore({ ...score, player1: score.player1 + 1 })
         } else if (winner.symbol === 'O') {
-            setScore({...score, player2: score.player2 + 1})
+            setScore({ ...score, player2: score.player2 + 1 })
         } else {
-            setScore({...score, draw: score.draw + 1})
+            setScore({ ...score, draw: score.draw + 1 })
         }
     }
 
-    const updateStatus = () => {
-        const emptyCells = board.filter((cell) => cell === null).length
-
-        if (emptyCells === 9) {
-            setStatus('Start')
-        } else if (winner !== null) {
-            setStatus('End')
-        } else {
-            setStatus('Active')
-        }
-    }
+    const updateStatus = () => (winner === null ? setStatus('Active') : setStatus('Over'))
 
     const updatePlayer = () => (player === 'X' ? setPlayer('O') : setPlayer('X'))
 
