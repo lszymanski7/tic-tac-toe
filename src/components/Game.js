@@ -28,11 +28,21 @@ const Game = () => {
     console.log('Player:', player)
     console.log('Winner:', winner)
 
+    const updatePlayer = () => (player === 'X' ? setPlayer('O') : setPlayer('X'))
+
+    const handleClick = (index) => {
+        console.log('Index:', index)
+        updatePlayer()
+    }
+
     return (
         <div className="flexbox-column fullscreen">
             <Header />
             <Score score={score} />
-            <Board board={board} />
+            <Board
+                board={board}
+                handleClick={handleClick}
+            />
             <Footer />
         </div>
     )
