@@ -6,11 +6,7 @@
 
 @charset 'utf-8';
 
-@import 
-  './abstracts/functions',
-  './abstracts/mixins',
-  './abstracts/placeholders',
-  './abstracts/variables';
+@import './abstracts/variables';
 
 @import 
   './base/animations', 
