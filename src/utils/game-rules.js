@@ -1,6 +1,4 @@
-// ================================================================================================
-// Function to determining if any of the players have won the game.
-// ================================================================================================
+// Winning combinations
 
 // Horizontal
 // [0, 1, 2] - [3, 4, 5] - [6, 7, 8]
@@ -10,6 +8,8 @@
 
 // Diagonal
 // [0, 4, 8] - [2, 4, 6]
+
+// Determine if someone has won the game or it's a draw
 
 const checkWinner = (board) => {
     const lines = [
@@ -34,11 +34,7 @@ const checkWinner = (board) => {
         }
     }
 
-    if (!board.includes(null)) {
-        return 'None'
-    } else {
-        return null
-    }
+    return !board.includes(null) ? 'None' : null
 }
 
 export { checkWinner as default }
