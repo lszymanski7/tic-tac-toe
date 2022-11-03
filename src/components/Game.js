@@ -110,7 +110,7 @@ const Game = () => {
 
     // Call functions after clicking a cell on the board
 
-    const handleClick = (i) => {
+    const handleOnClick = (i) => {
         if (board[i] === null) {
             updateBoard(i)
             updateTurn()
@@ -144,7 +144,8 @@ const Game = () => {
             <Score score={score} />
             <Board
                 board={board}
-                handleClick={handleClick}
+                handleOnClick={handleOnClick}
+                winner={winner}
             />
             <Footer />
         </div>
