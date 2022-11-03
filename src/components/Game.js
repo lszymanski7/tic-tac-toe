@@ -141,12 +141,12 @@ const Game = () => {
     return (
         <div className="flexbox-column fullscreen">
             <Header />
-            <Score score={score} />
             <Board
                 board={board}
                 handleOnClick={handleOnClick}
                 winner={winner}
             />
+            <Score score={score} />
             <Footer />
         </div>
     )
