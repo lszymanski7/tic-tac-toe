@@ -2,8 +2,6 @@
 // Imports
 // ================================================================================================
 
-// Abstracts -> Vendors -> Base -> Layout -> Components -> Pages -> Themes
-
 @charset 'utf-8';
 
 @import './abstracts/variables';
@@ -16,6 +14,11 @@
 
 @import 
   './layout/flexbox',
-  './layout/footer';
+  './layout/footer',
+  './layout/header';
 
-@import './components/cell';
+@import 
+  './components/board',
+  './components/cell',
+  './components/score',
+  './components/toggle-switch';
