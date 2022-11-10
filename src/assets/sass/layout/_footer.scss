@@ -3,8 +3,8 @@
 // ================================================================================================
 
 .footer {
-  background-color: map-get($colors, 'app-light', 'gray-light');
-  border-top: 0.1rem solid darken(map-get($colors, 'app-light', 'gray-light'), 15%);
+  background-color: map-get($colors, 'toggle-switch', 'default-gray-light');
+  border-top: 0.1rem solid darken(map-get($colors, 'toggle-switch', 'default-gray-light'), 15%);
   color: map-get($colors, 'basic', 'black');
   flex-shrink: 0;
   font-size: 1.4rem;
