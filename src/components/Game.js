@@ -9,7 +9,6 @@ import checkWinner from './../utils/game-rules'
 
 const Game = () => {
     // Default values for game states
-
     const defaultBoard = Array(9).fill(null)
     const defaultScore = {
         player1: 0,
@@ -31,14 +30,12 @@ const Game = () => {
     const defaultWinner = null
 
     // Game states
-
     const [board, setBoard] = useState(defaultBoard)
     const [score, setScore] = useState(defaultScore)
     const [players, setPlayers] = useState(defaultPlayers)
     const [winner, setWinner] = useState(defaultWinner)
 
     // Update the board (change the value for a specific index)
-
     const updateBoard = (i) => {
         const newState = board.map((element, index) => {
             if (index === i) {
@@ -50,7 +47,6 @@ const Game = () => {
     }
 
     // Update the score (increase the value by 1)
-
     const updateScore = () => {
         if (winner.symbol === 'X') {
             setScore({ ...score, player1: score.player1 + 1 })
@@ -62,7 +58,6 @@ const Game = () => {
     }
 
     // Update the player's priority (determine who will start the game)
-
     const updatePriority = () => {
         if (players.player1.priority) {
             setPlayers({
@@ -78,7 +73,6 @@ const Game = () => {
     }
 
     // Update the player's turn (determine who has the next move)
-
     const updateTurn = () => {
         if (players.player1.turn) {
             setPlayers({
@@ -94,14 +88,12 @@ const Game = () => {
     }
 
     // Update the winner (determine who won the game)
-
     const updateWinner = () => {
         const newState = checkWinner(board)
         setWinner(newState)
     }
 
     // Reset the game
-
     const resetGame = () => {
         setBoard(defaultBoard)
         updatePriority()
@@ -109,7 +101,6 @@ const Game = () => {
     }
 
     // Call functions after clicking a cell on the board
-
     const handleOnClick = (i) => {
         if (board[i] === null) {
             updateBoard(i)
@@ -120,19 +111,16 @@ const Game = () => {
     }
 
     // Call the updateWinner() function if the board values have changed
-
     useEffect(() => {
         updateWinner()
     }, [board])
 
     // Call the updateScore() function if someone has won the game or it's a draw
-
     useEffect(() => {
         winner !== null && updateScore()
     }, [winner])
 
     // Log values
-
     console.log('Board:', board)
     console.log('Score:', score)
     console.log('Players:', players)
@@ -144,7 +132,6 @@ const Game = () => {
             <Board
                 board={board}
                 handleOnClick={handleOnClick}
-                winner={winner}
             />
             <Score score={score} />
             <Footer />
