@@ -4,13 +4,18 @@
 
 .header {
   align-items: center;
+  gap: 30px;
   padding: map-get($spaces, 'md') map-get($spaces, 'md') map-get($spaces, 'xxl');
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    gap: 40px;
+    padding: map-get($spaces, 'md') map-get($spaces, 'md') map-get($spaces, 'xl');
+  }
 }
 
 .header__container {
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 map-get($spaces, 'md');
   width: 100%;
 
   a {
@@ -25,11 +30,12 @@
 }
 
 .header__title {
-  font-size: 8.4rem;
+  font-size: 8rem;
   font-weight: 800;
-  @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-50'));
+  @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-25'));
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    font-size: map-get($font-sizes, 'xxxl');
+    font-size: 5.2rem;
+    @include drop-shadow(2px, 2px, 2px, map-get($colors, 'shadow', 'black-25'));
   }
 }
