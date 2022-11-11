@@ -1,69 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Cell from './Cell'
+import Square from './Square'
 
-const Board = ({ board, handleClick }) => {
+const Board = ({ board, handleOnClick }) => {
+    // Render the board cells
+    const renderSquare = (className, i) => {
+        return (
+            <Square
+                className={className}
+                handleOnClick={() => handleOnClick(i)}
+                symbol={board[i]}
+            />
+        )
+    }
+
     return (
-        <div className="flexbox-row">
-            <div className="flexbox-column">
-                <Cell
-                    className={'cell'}
-                    index={0}
-                    onClick={handleClick}
-                    symbol={board[0]}
-                />
-                <Cell
-                    className={'cell top bottom'}
-                    index={3}
-                    onClick={handleClick}
-                    symbol={board[3]}
-                />
-                <Cell
-                    className={'cell'}
-                    index={6}
-                    onClick={handleClick}
-                    symbol={board[6]}
-                />
+        <div className="flexbox-column board">
+            <div className="flexbox-row">
+                {renderSquare('square', 0)}
+                {renderSquare('square left right', 1)}
+                {renderSquare('square', 2)}
             </div>
-            <div className="flexbox-column">
-                <Cell
-                    className={'cell left right'}
-                    index={1}
-                    onClick={handleClick}
-                    symbol={board[1]}
-                />
-                <Cell
-                    className={'cell left right top bottom'}
-                    index={4}
-                    onClick={handleClick}
-                    symbol={board[4]}
-                />
-                <Cell
-                    className={'cell left right'}
-                    index={7}
-                    onClick={handleClick}
-                    symbol={board[7]}
-                />
+            <div className="flexbox-row">
+                {renderSquare('square top bottom', 3)}
+                {renderSquare('square left right top bottom', 4)}
+                {renderSquare('square top bottom', 5)}
             </div>
-            <div className="flexbox-column">
-                <Cell
-                    className={'cell'}
-                    index={2}
-                    onClick={handleClick}
-                    symbol={board[2]}
-                />
-                <Cell
-                    className={'cell top bottom'}
-                    index={5}
-                    onClick={handleClick}
-                    symbol={board[5]}
-                />
-                <Cell
-                    className={'cell'}
-                    index={8}
-                    onClick={handleClick}
-                    symbol={board[8]}
-                />
+            <div className="flexbox-row">
+                {renderSquare('square', 6)}
+                {renderSquare('square left right', 7)}
+                {renderSquare('square', 8)}
             </div>
         </div>
     )
@@ -71,7 +37,7 @@ const Board = ({ board, handleClick }) => {
 
 Board.propTypes = {
     board: PropTypes.array.isRequired,
-    handleClick: PropTypes.func.isRequired
+    handleOnClick: PropTypes.func.isRequired
 }
 
 export { Board as default }
