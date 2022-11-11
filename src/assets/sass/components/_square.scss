@@ -1,0 +1,57 @@
+// ================================================================================================
+// Cell styles
+// ================================================================================================
+
+.square {
+  border-width: 8px;
+  @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-25'));
+
+  &.top {
+    border-top-color: map-get($colors, 'basic', 'black');
+    border-top-style: solid;
+  }
+
+  &.right {
+    border-right-color: map-get($colors, 'basic', 'black');
+    border-right-style: solid;
+  }
+
+  &.bottom {
+    border-bottom-color: map-get($colors, 'basic', 'black');
+    border-bottom-style: solid;
+  }
+
+  &.left {
+    border-left-color: map-get($colors, 'basic', 'black');
+    border-left-style: solid;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    border-width: 6px;
+    @include drop-shadow(2px, 2px, 2px, map-get($colors, 'shadow', 'black-25'));
+  }
+}
+
+.square__button {
+  background: none;
+  border: 0;
+  display: block;
+  height: 152px;
+  padding: 0;
+  width: 152px;
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    height: 104px;
+    width: 104px;
+  }
+}
+
+.square__symbol {
+  height: 108px;
+  width: 108px;
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    height: 72px;
+    width: 72px;
+  }
+}
