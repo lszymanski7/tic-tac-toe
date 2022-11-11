@@ -8,29 +8,38 @@
   justify-content: center;
   padding: map-get($spaces, 'xxl') map-get($spaces, 'md') map-get($spaces, 'xl');
   text-align: center;
-  @include drop-shadow(1px, 1px, 1px, map-get($colors, 'shadow', 'black-50'));
+  white-space: nowrap;
+  @include drop-shadow(1px, 1px, 1px, map-get($colors, 'shadow', 'black-25'));
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     font-size: 2rem;
+    gap: 30px;
+    padding: map-get($spaces, 'xl') map-get($spaces, 'md');
+    @include drop-shadow(0.5px, 0.5px, 0.5px, map-get($colors, 'shadow', 'black-25'));
   }
 }
 
 .score__container {
-  gap: 6px;
+  gap: 8px;
 }
 
 .score__player {
   align-items: center;
   gap: 10px;
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    gap: 8px;
+  }
 }
 
 .score__img {
   height: 24px;
   width: 24px;
-  @include drop-shadow(1px, 1px, 1px, map-get($colors, 'shadow', 'black-50'));
+  @include drop-shadow(1px, 1px, 1px, map-get($colors, 'shadow', 'black-25'));
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     height: 20px;
     width: 20px;
+    @include drop-shadow(0.5px, 0.5px, 0.5px, map-get($colors, 'shadow', 'black-25'));
   }
 }
