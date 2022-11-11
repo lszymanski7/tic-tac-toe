@@ -27,9 +27,9 @@
 .header__title {
   font-size: 8.4rem;
   font-weight: 800;
-  text-shadow: 3px 3px 3px map-get($colors, 'shadow');
+  @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-50'));
 
-  @media only screen and (max-width: map-get($breakpoints, 'sm')) {
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
     font-size: map-get($font-sizes, 'xxxl');
   }
 }
