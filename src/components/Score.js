@@ -10,6 +10,7 @@ const Score = ({ score }) => {
                 <div className="flexbox-row score__player">
                     <p>Player 1</p>
                     <img
+                        alt="X Symbol"
                         className="score__img"
                         src={xBracketsIcon}
                     />
@@ -24,6 +25,7 @@ const Score = ({ score }) => {
                 <div className="flexbox-row score__player">
                     <p>Player 2</p>
                     <img
+                        alt="O Symbol"
                         className="score__img"
                         src={oBracketsIcon}
                     />

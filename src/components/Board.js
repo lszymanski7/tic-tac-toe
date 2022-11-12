@@ -9,6 +9,7 @@ const Board = ({ board, handleOnClick }) => {
             <Square
                 className={className}
                 handleOnClick={() => handleOnClick(i)}
+                index={i}
                 symbol={board[i]}
             />
         )
