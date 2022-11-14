@@ -4,11 +4,11 @@
 
 .header {
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   padding: map-get($spaces, 'md') map-get($spaces, 'md') map-get($spaces, 'xxl');
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    gap: 40px;
+    gap: 50px;
     padding: map-get($spaces, 'md') map-get($spaces, 'md') map-get($spaces, 'xl');
   }
 }
@@ -17,10 +17,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
-  a {
-    text-decoration: none;
-  }
 }
 
 .header__github {
@@ -32,10 +28,10 @@
 .header__title {
   font-size: 8rem;
   font-weight: 800;
-  @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-25'));
+  @include drop-shadow(4px, 4px, 4px, map-get($colors, 'shadow', 'black-25'));
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    font-size: 5.2rem;
-    @include drop-shadow(2px, 2px, 2px, map-get($colors, 'shadow', 'black-25'));
+    font-size: 5.4rem;
+    @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-25'));
   }
 }

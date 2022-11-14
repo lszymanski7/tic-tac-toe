@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ToggleSwitch from './ToggleSwitch'
-import github from '../assets/images/shapes/github.svg'
+import github from '../assets/images/logos/github.svg'
 
 const Header = () => {
     const title = 'Tic-Tac-Toe'
