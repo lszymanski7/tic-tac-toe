@@ -3,32 +3,34 @@
 // ================================================================================================
 
 .square {
-  border-width: 8px;
   @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-25'));
+  @include user-select(none);
 
   &.top {
-    border-top-color: map-get($colors, 'basic', 'black');
-    border-top-style: solid;
+    border-top: 8px solid map-get($colors, 'basic', 'black');
   }
 
   &.right {
-    border-right-color: map-get($colors, 'basic', 'black');
-    border-right-style: solid;
+    border-right: 8px solid map-get($colors, 'basic', 'black');
   }
 
   &.bottom {
-    border-bottom-color: map-get($colors, 'basic', 'black');
-    border-bottom-style: solid;
+    border-bottom: 8px solid map-get($colors, 'basic', 'black');
   }
 
   &.left {
-    border-left-color: map-get($colors, 'basic', 'black');
-    border-left-style: solid;
+    border-left: 8px solid map-get($colors, 'basic', 'black');
   }
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    border-width: 6px;
     @include drop-shadow(2px, 2px, 2px, map-get($colors, 'shadow', 'black-25'));
+
+    &.top,
+    &.right,
+    &.bottom,
+    &.left {
+      border-width: 6px;
+    }
   }
 }
 

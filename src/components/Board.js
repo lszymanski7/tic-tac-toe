@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Square from './Square'
 
 const Board = ({ board, handleOnClick }) => {
-    // Render the board cells
+    // Render the board squares
     const renderSquare = (className, i) => {
         return (
             <Square
