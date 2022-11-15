@@ -6,16 +6,16 @@
   font-size: map-get($font-sizes, 'lg');
   gap: 50px;
   justify-content: center;
-  padding: map-get($spaces, 'xxl') map-get($spaces, 'md') map-get($spaces, 'xl');
+  padding: map-get($spaces, 'xxl') map-get($spaces, 'md');
   text-align: center;
   white-space: nowrap;
-  @include drop-shadow(1px, 1px, 1px, map-get($colors, 'shadow', 'black-25'));
+  @include drop-shadow(2px, 2px, 2px, map-get($colors, 'shadow', 'black-25'));
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     font-size: 2rem;
     gap: 30px;
-    padding: map-get($spaces, 'xl') map-get($spaces, 'md');
-    @include drop-shadow(0.5px, 0.5px, 0.5px, map-get($colors, 'shadow', 'black-25'));
+    padding: map-get($spaces, 'xl') map-get($spaces, 'md') map-get($spaces, 'xxl');
+    @include drop-shadow(1px, 1px, 1px, map-get($colors, 'shadow', 'black-25'));
   }
 }
 
@@ -35,11 +35,9 @@
 .score__img {
   height: 24px;
   width: 24px;
-  @include drop-shadow(1px, 1px, 1px, map-get($colors, 'shadow', 'black-25'));
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     height: 20px;
     width: 20px;
-    @include drop-shadow(0.5px, 0.5px, 0.5px, map-get($colors, 'shadow', 'black-25'));
   }
 }
