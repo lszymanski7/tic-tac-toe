@@ -1,29 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ToggleSwitch = ({ id, isChecked, handleOnChange }) => {
+const ToggleSwitch = ({ handleOnChange, icons, id, isChecked }) => {
     return (
         <div className="toggle-switch">
             <input
                 checked={isChecked}
-                className="toggle-switch-input"
+                className="toggle-switch__input"
                 id={id}
                 onChange={handleOnChange}
                 type="checkbox"
             />
             <label
-                className="toggle-switch-label"
+                className="toggle-switch__label"
                 htmlFor={id}
             >
-                <span className="moon" />
-                <span className="sun" />
-                <span className="slider" />
+                {icons && (
+                    <>
+                        <span className={'toggle-switch__icon ' + icons[0]} />
+                        <span className={'toggle-switch__icon ' + icons[1]} />
+                    </>
+                )}
+                <span className="toggle-switch__slider" />
             </label>
         </div>
     )
 }
 
 ToggleSwitch.propTypes = {
+    icons: PropTypes.array,
     id: PropTypes.string.isRequired,
     isChecked: PropTypes.bool.isRequired,
     handleOnChange: PropTypes.func.isRequired
