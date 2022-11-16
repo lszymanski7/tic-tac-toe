@@ -9,7 +9,7 @@ const Square = ({ className, handleOnClick, index, symbol }) => {
     return (
         <div className={className}>
             <button
-                aria-label={"Square " + index}
+                aria-label={'Square ' + index}
                 className="square__button"
                 onClick={handleOnClick}
             >
