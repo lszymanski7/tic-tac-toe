@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ToggleSwitch = ({ handleOnChange, icons, id, isChecked }) => {
+const ToggleSwitch = ({ colors, handleOnChange, icons, id, isChecked }) => {
     return (
         <div className="toggle-switch">
             <input
@@ -12,7 +12,9 @@ const ToggleSwitch = ({ handleOnChange, icons, id, isChecked }) => {
                 type="checkbox"
             />
             <label
-                className="toggle-switch__label"
+                className={
+                    'toggle-switch__label ' + (colors && (isChecked ? colors[0] : colors[1]))
+                }
                 htmlFor={id}
             >
                 {icons && (
@@ -28,10 +30,11 @@ const ToggleSwitch = ({ handleOnChange, icons, id, isChecked }) => {
 }
 
 ToggleSwitch.propTypes = {
+    colors: PropTypes.array,
+    handleOnChange: PropTypes.func.isRequired,
     icons: PropTypes.array,
     id: PropTypes.string.isRequired,
-    isChecked: PropTypes.bool.isRequired,
-    handleOnChange: PropTypes.func.isRequired
+    isChecked: PropTypes.bool.isRequired
 }
 
 export { ToggleSwitch as default }
