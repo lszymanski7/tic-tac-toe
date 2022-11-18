@@ -37,13 +37,14 @@ const Game = () => {
 
     // Update the board (change the value for a specific index)
     const updateBoard = (i) => {
-        const newState = board.map((element, index) => {
+        const nextState = board.map((element, index) => {
             if (index === i) {
                 return players.player1.turn ? players.player1.symbol : players.player2.symbol
+            } else {
+                return element
             }
-            return element
         })
-        setBoard(newState)
+        setBoard(nextState)
     }
 
     // Update the score (increase the value by 1)
@@ -89,15 +90,19 @@ const Game = () => {
 
     // Update the winner (determine who won the game)
     const updateWinner = () => {
-        const newState = checkWinner(board)
-        setWinner(newState)
+        const prevState = winner
+        const nextState = checkWinner(board)
+        
+        if (prevState !== nextState) {
+            setWinner(nextState)
+        }
     }
 
     // Reset the game
     const resetGame = () => {
         setBoard(defaultBoard)
+        setWinner(defaultWinner)
         updatePriority()
-        setWinner(null)
     }
 
     // Call functions after clicking a cell on the board
@@ -107,17 +112,23 @@ const Game = () => {
             updateTurn()
         }
 
-        winner !== null && resetGame()
+        if (winner !== null) {
+            resetGame()
+        }
     }
-
+    
     // Call the updateWinner() function if the board values have changed
     useEffect(() => {
+        console.log('Effect 1')
         updateWinner()
     }, [board])
 
     // Call the updateScore() function if someone has won the game or it's a draw
     useEffect(() => {
-        winner !== null && updateScore()
+        console.log('Effect 2')
+        if (winner !== null) {
+            updateScore()
+        }
     }, [winner])
 
     // Log values
