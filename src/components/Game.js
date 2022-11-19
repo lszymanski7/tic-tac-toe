@@ -119,13 +119,11 @@ const Game = () => {
     
     // Call the updateWinner() function if the board values have changed
     useEffect(() => {
-        console.log('Effect 1')
         updateWinner()
     }, [board])
 
     // Call the updateScore() function if someone has won the game or it's a draw
     useEffect(() => {
-        console.log('Effect 2')
         if (winner !== null) {
             updateScore()
         }
