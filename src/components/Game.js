@@ -49,12 +49,14 @@ const Game = () => {
 
     // Update the score (increase the value by 1)
     const updateScore = () => {
-        if (winner.symbol === 'X') {
-            setScore({ ...score, player1: score.player1 + 1 })
-        } else if (winner.symbol === 'O') {
-            setScore({ ...score, player2: score.player2 + 1 })
-        } else {
-            setScore({ ...score, draw: score.draw + 1 })
+        if (winner !== null) {
+            if (winner.symbol === 'X') {
+                setScore({ ...score, player1: score.player1 + 1 })
+            } else if (winner.symbol === 'O') {
+                setScore({ ...score, player2: score.player2 + 1 })
+            } else {
+                setScore({ ...score, draw: score.draw + 1 })
+            }
         }
     }
 
@@ -92,7 +94,7 @@ const Game = () => {
     const updateWinner = () => {
         const prevState = winner
         const nextState = checkWinner(board)
-        
+
         if (prevState !== nextState) {
             setWinner(nextState)
         }
@@ -116,7 +118,7 @@ const Game = () => {
             resetGame()
         }
     }
-    
+
     // Call the updateWinner() function if the board values have changed
     useEffect(() => {
         updateWinner()
@@ -124,9 +126,7 @@ const Game = () => {
 
     // Call the updateScore() function if someone has won the game or it's a draw
     useEffect(() => {
-        if (winner !== null) {
-            updateScore()
-        }
+        updateScore()
     }, [winner])
 
     // Log values
