@@ -17,24 +17,24 @@ $breakpoints: (
 
 $colors: (
   'app-light': (
-    'gray-light': hsl(0, 0%, 85%),          // RGB: #D9D9D9
+    'gray-light': hsl(0, 0%, 85%),          // HEX: #D9D9D9
   ),
   'basic': (
-    'black': hsl(0, 0%, 0%),                // RGB: #000000
-    'white': hsl(0, 0%, 100%)               // RGB: #FFFFFF
+    'black': hsl(0, 0%, 0%),                // HEX: #000000
+    'white': hsl(0, 0%, 100%)               // HEX: #FFFFFF
   ),
   'toggle-switch': (
-    'default-gray-dark': hsl(0, 0%, 80%),   // RGB: #CCCCCC
-    'default-gray-light': hsl(0, 0%, 95%),  // RGB: #F2F2F2
-    'off-red-dark': hsl(358, 80%, 56%),     // RGB: #E83439
-    'off-red-light': hsl(0, 99%, 64%),      // RGB: #FE4A49
-    'on-green-dark': hsl(133, 100%, 40%),   // RGB: #00CD2E
-    'on-green-light': hsl(124, 79%, 58%)    // RGB: #3EE84A
+    'default-gray-dark': hsl(0, 0%, 80%),   // HEX: #CCCCCC
+    'default-gray-light': hsl(0, 0%, 95%),  // HEX: #F2F2F2
+    'off-red-dark': hsl(358, 80%, 56%),     // HEX: #E83439
+    'off-red-light': hsl(0, 99%, 64%),      // HEX: #FE4A49
+    'on-green-dark': hsl(133, 100%, 40%),   // HEX: #00CD2E
+    'on-green-light': hsl(124, 79%, 58%)    // HEX: #3EE84A
   ),
   'shadow': (
-    'black-25': hsla(0, 0%, 0%, 0.25),       // RGB: #000000
-    'black-50': hsla(0, 0%, 0%, 0.5),        // RGB: #000000
-    'black-75': hsla(0, 0%, 0%, 0.75)        // RGB: #000000
+    'black-25': hsla(0, 0%, 0%, 0.25),      // HEX: #000000
+    'black-50': hsla(0, 0%, 0%, 0.5),       // HEX: #000000
+    'black-75': hsla(0, 0%, 0%, 0.75)       // HEX: #000000
   )
 );
 
