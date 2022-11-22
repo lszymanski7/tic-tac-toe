@@ -110,8 +110,8 @@ const Game = () => {
             const updatedBoard = updateBoard(i)
             const updatedWinner = updateWinner(updatedBoard)
             updatedWinner === null ? updateTurn() : updateScore(updatedWinner)
-        } 
-        
+        }
+
         winner !== null && resetGame()
     }
 
