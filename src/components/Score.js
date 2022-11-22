@@ -3,11 +3,16 @@ import PropTypes from 'prop-types'
 import oBracketsIcon from '../assets/images/shapes/o-brackets.svg'
 import xBracketsIcon from '../assets/images/shapes/x-brackets.svg'
 
-const Score = ({ score }) => {
+const Score = ({ players, score, winner }) => {
     return (
         <div className="flexbox-row score">
             <div className="flexbox-column score__container">
-                <div className="flexbox-row score__player">
+                <div
+                    className={
+                        'flexbox-row score__player' +
+                        (winner === null && players.player1.turn ? ' score__turn' : '')
+                    }
+                >
                     <p>Player 1</p>
                     <img
                         alt="X Symbol"
@@ -22,7 +27,12 @@ const Score = ({ score }) => {
                 <p>{score.draw}</p>
             </div>
             <div className="flexbox-column score__container">
-                <div className="flexbox-row score__player">
+                <div
+                    className={
+                        'flexbox-row score__player' +
+                        (winner === null && players.player2.turn ? ' score__turn' : '')
+                    }
+                >
                     <p>Player 2</p>
                     <img
                         alt="O Symbol"
@@ -37,7 +47,9 @@ const Score = ({ score }) => {
 }
 
 Score.propTypes = {
-    score: PropTypes.object.isRequired
+    players: PropTypes.object.isRequired,
+    score: PropTypes.object.isRequired,
+    winner: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 }
 
 export { Score as default }

@@ -32,9 +32,13 @@
   }
 }
 
+.score__turn {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(52%) saturate(7095%) hue-rotate(352deg) brightness(93%) contrast(135%); // HEX: #FF0000
+}
+
 .score__img {
-  height: 24px;
-  width: 24px;
+  height: 25px;
+  width: 25px;
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     height: 20px;
