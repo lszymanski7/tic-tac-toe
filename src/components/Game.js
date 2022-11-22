@@ -30,8 +30,8 @@ const Game = () => {
 
     // Game states
     const [board, setBoard] = useState(defaultBoard)
-    const [players, setPlayers] = useState(defaultPlayers)
     const [score, setScore] = useState(defaultScore)
+    const [players, setPlayers] = useState(defaultPlayers)
     const [winner, setWinner] = useState(defaultWinner)
 
     // Update the board (change the value for a specific index)
