@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Board from './Board'
-import Footer from './Footer'
 import Header from './Header'
 import Score from './Score'
 import checkWinner from './../utils/game-rules'
@@ -31,8 +30,8 @@ const Game = () => {
 
     // Game states
     const [board, setBoard] = useState(defaultBoard)
-    const [score, setScore] = useState(defaultScore)
     const [players, setPlayers] = useState(defaultPlayers)
+    const [score, setScore] = useState(defaultScore)
     const [winner, setWinner] = useState(defaultWinner)
 
     // Update the board (change the value for a specific index)
@@ -45,18 +44,18 @@ const Game = () => {
             }
         })
         setBoard(nextState)
+
+        return nextState
     }
 
     // Update the score (increase the value by 1)
-    const updateScore = () => {
-        if (winner !== null) {
-            if (winner.symbol === 'X') {
-                setScore({ ...score, player1: score.player1 + 1 })
-            } else if (winner.symbol === 'O') {
-                setScore({ ...score, player2: score.player2 + 1 })
-            } else {
-                setScore({ ...score, draw: score.draw + 1 })
-            }
+    const updateScore = (winner) => {
+        if (winner.symbol === 'X') {
+            setScore({ ...score, player1: score.player1 + 1 })
+        } else if (winner.symbol === 'O') {
+            setScore({ ...score, player2: score.player2 + 1 })
+        } else {
+            setScore({ ...score, draw: score.draw + 1 })
         }
     }
 
@@ -91,13 +90,11 @@ const Game = () => {
     }
 
     // Update the winner (determine who won the game)
-    const updateWinner = () => {
-        const prevState = winner
+    const updateWinner = (board) => {
         const nextState = checkWinner(board)
+        setWinner(nextState)
 
-        if (prevState !== nextState) {
-            setWinner(nextState)
-        }
+        return nextState
     }
 
     // Reset the game
@@ -109,25 +106,14 @@ const Game = () => {
 
     // Call functions after clicking a cell on the board
     const handleOnClick = (i) => {
-        if (board[i] === null) {
-            updateBoard(i)
-            updateTurn()
-        }
-
-        if (winner !== null) {
-            resetGame()
-        }
+        if (winner === null && board[i] === null) {
+            const updatedBoard = updateBoard(i)
+            const updatedWinner = updateWinner(updatedBoard)
+            updatedWinner === null ? updateTurn() : updateScore(updatedWinner)
+        } 
+        
+        winner !== null && resetGame()
     }
-
-    // Call the updateWinner() function if the board values have changed
-    useEffect(() => {
-        updateWinner()
-    }, [board])
-
-    // Call the updateScore() function if someone has won the game or it's a draw
-    useEffect(() => {
-        updateScore()
-    }, [winner])
 
     // Log values
     console.log('Board:', board)
@@ -142,8 +128,11 @@ const Game = () => {
                 board={board}
                 handleOnClick={handleOnClick}
             />
-            <Score score={score} />
-            <Footer />
+            <Score
+                players={players}
+                score={score}
+                winner={winner}
+            />
         </div>
     )
 }
