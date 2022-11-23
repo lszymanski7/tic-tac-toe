@@ -6,7 +6,7 @@
   font-size: map-get($font-sizes, 'lg');
   gap: 50px;
   justify-content: center;
-  padding: map-get($spaces, 'xxl') map-get($spaces, 'md') 9.6rem;
+  padding: map-get($spaces, 'xxl') map-get($spaces, 'md') 8.2rem;
   text-align: center;
   white-space: nowrap;
   @include drop-shadow(2px, 2px, 2px, map-get($colors, 'shadow', 'black-25'));
