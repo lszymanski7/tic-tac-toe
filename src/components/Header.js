@@ -18,7 +18,7 @@ const Header = () => {
                 </a>
                 <ToggleSwitch
                     handleOnChange={() => setIsChecked(!isChecked)}
-                    icons={['moon', 'sun']}
+                    icons={['moon-icon', 'sun-icon']}
                     id="themeSwitcher"
                     isChecked={isChecked}
                 />
