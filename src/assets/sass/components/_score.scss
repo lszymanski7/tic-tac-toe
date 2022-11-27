@@ -21,11 +21,10 @@
 
 .score__container {
   gap: 10px;
-}
 
-.score__player {
-  align-items: center;
-  gap: 10px;
+  div:first-of-type {
+    align-items: center;
+  }
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     gap: 8px;
@@ -36,12 +35,30 @@
   filter: invert(17%) sepia(83%) saturate(7404%) hue-rotate(7deg) brightness(103%) contrast(124%); // HEX: #FF0000
 }
 
-.score__img {
-  height: 25px;
-  width: 25px;
+.score__name {
+  padding: 0 1rem 0 0;
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    padding: 0 map-get($spaces, 'xs') 0 0;
+  }
+}
+
+.score__bracket {
+  height: 24px;
+  width: 6px;
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     height: 20px;
-    width: 20px;
+    width: 5px;
+  }
+}
+
+.score__symbol {
+  height: 14px;
+  width: 14px;
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    height: 12px;
+    width: 12px;
   }
 }

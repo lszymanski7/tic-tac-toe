@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import oBracketsIcon from '../assets/images/shapes/o-brackets.svg'
-import xBracketsIcon from '../assets/images/shapes/x-brackets.svg'
+import bracketLeftIcon from '../assets/images/shapes/bracket-left.svg'
+import bracketRightIcon from '../assets/images/shapes/bracket-right.svg'
+import oIcon from '../assets/images/shapes/o.svg'
+import xIcon from '../assets/images/shapes/x.svg'
 
 const Score = ({ players, score, winner }) => {
     return (
@@ -9,15 +11,25 @@ const Score = ({ players, score, winner }) => {
             <div className="flexbox-column score__container">
                 <div
                     className={
-                        'flexbox-row score__player' +
+                        'flexbox-row' +
                         (winner === null && players.player1.turn ? ' score__turn' : '')
                     }
                 >
-                    <p>Player 1</p>
+                    <p className="score__name">Player 1</p>
                     <img
-                        alt="X Symbol"
-                        className="score__img"
-                        src={xBracketsIcon}
+                        alt="Bracket Left Icon"
+                        className="score__bracket"
+                        src={bracketLeftIcon}
+                    />
+                    <img
+                        alt="X Icon"
+                        className="score__symbol"
+                        src={xIcon}
+                    />
+                    <img
+                        alt="Bracket Right Icon"
+                        className="score__bracket"
+                        src={bracketRightIcon}
                     />
                 </div>
                 <p>{score.player1}</p>
@@ -29,15 +41,25 @@ const Score = ({ players, score, winner }) => {
             <div className="flexbox-column score__container">
                 <div
                     className={
-                        'flexbox-row score__player' +
+                        'flexbox-row' +
                         (winner === null && players.player2.turn ? ' score__turn' : '')
                     }
                 >
-                    <p>Player 2</p>
+                    <p className="score__name">Player 2</p>
                     <img
-                        alt="O Symbol"
-                        className="score__img"
-                        src={oBracketsIcon}
+                        alt="Bracket Left Icon"
+                        className="score__bracket"
+                        src={bracketLeftIcon}
+                    />
+                    <img
+                        alt="O Icon"
+                        className="score__symbol"
+                        src={oIcon}
+                    />
+                    <img
+                        alt="Bracket Right Icon"
+                        className="score__bracket"
+                        src={bracketRightIcon}
                     />
                 </div>
                 <p>{score.player2}</p>
