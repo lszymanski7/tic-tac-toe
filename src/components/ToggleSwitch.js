@@ -13,7 +13,8 @@ const ToggleSwitch = ({ colors, handleOnChange, icons, id, isChecked }) => {
             />
             <label
                 className={
-                    'toggle-switch__label ' + (colors && (isChecked ? colors[0] : colors[1]))
+                    'toggle-switch__label' +
+                    (colors ? (isChecked ? ' ' + colors[0] : ' ' + colors[1]) : '')
                 }
                 htmlFor={id}
             >
