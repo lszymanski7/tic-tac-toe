@@ -6,7 +6,7 @@
 
 .blink {
   animation-delay: 400ms;
-  animation-duration: 750ms;
+  animation-duration: 600ms;
   animation-iteration-count: 3;
   animation-name: blink;
   animation-timing-function: linear;
@@ -24,16 +24,35 @@
   }
 }
 
-// Grow animation
+// Fade animation
 
-.grow {
-  animation-duration: 100ms;
+.fade {
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  animation-name: grow;
+  animation-name: fade;
   animation-timing-function: linear;
 }
 
-@keyframes grow {
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+// Scale animation
+
+.scale {
+  animation-duration: 200ms;
+  animation-iteration-count: 1;
+  animation-name: scale;
+  animation-timing-function: linear;
+}
+
+@keyframes scale {
   0% {
     transform: scale(0.5);
   }
