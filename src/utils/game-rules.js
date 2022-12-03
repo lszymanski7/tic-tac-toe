@@ -34,7 +34,7 @@ const checkWinner = (board) => {
         }
     }
 
-    return !board.includes(null) ? 'None' : null
+    return null
 }
 
 export { checkWinner as default }
