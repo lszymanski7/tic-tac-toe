@@ -2,15 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Square from './Square'
 
-const Board = ({ board, handleOnClick }) => {
+const Board = ({ animation, board, handleOnClick, winner }) => {
     // Render the board squares
     const renderSquare = (className, i) => {
         return (
             <Square
+                animation={animation}
                 className={className}
                 handleOnClick={() => handleOnClick(i)}
                 index={i}
                 symbol={board[i]}
+                winningLine={winner !== null && winner.line.includes(i) ? true : false}
             />
         )
     }
@@ -37,8 +39,10 @@ const Board = ({ board, handleOnClick }) => {
 }
 
 Board.propTypes = {
+    animation: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
     board: PropTypes.array.isRequired,
-    handleOnClick: PropTypes.func.isRequired
+    handleOnClick: PropTypes.func.isRequired,
+    winner: PropTypes.object
 }
 
 export { Board as default }
