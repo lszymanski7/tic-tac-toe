@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import oIcon from '../assets/images/shapes/o.svg'
 import xIcon from '../assets/images/shapes/x.svg'
 
-const Square = ({ className, handleOnClick, index, symbol }) => {
+const Square = ({ animation, className, handleOnClick, index, symbol, winningLine }) => {
     const icon = symbol === 'O' ? oIcon : symbol === 'X' ? xIcon : symbol
+    const winAnimation = winningLine ? animation.line : animation.notLine
 
     return (
         <div className={className}>
@@ -16,7 +17,7 @@ const Square = ({ className, handleOnClick, index, symbol }) => {
                 {icon && (
                     <img
                         alt={`${symbol} Icon`}
-                        className="square__symbol"
+                        className={'square__symbol' + (winAnimation !== undefined ? winAnimation : ' ' + animation)}
                         src={icon}
                     />
                 )}
@@ -26,10 +27,12 @@ const Square = ({ className, handleOnClick, index, symbol }) => {
 }
 
 Square.propTypes = {
+    animation: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
     className: PropTypes.string.isRequired,
     handleOnClick: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
-    symbol: PropTypes.string
+    symbol: PropTypes.string,
+    winningLine: PropTypes.bool.isRequired
 }
 
 export { Square as default }
