@@ -12,7 +12,7 @@ const Board = ({ animation, board, handleOnClick, winner }) => {
                 handleOnClick={() => handleOnClick(i)}
                 index={i}
                 symbol={board[i]}
-                winningLine={winner !== null && winner.line.includes(i) ? true : false}
+                winningLine={winner !== null ? winner.line.includes(i) : false}
             />
         )
     }
