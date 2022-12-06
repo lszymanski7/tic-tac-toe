@@ -6,7 +6,7 @@ const Header = () => {
     // Game title
     const title = 'Tic-Tac-Toe'
 
-    // Dark and light mode toggle switch states
+    // Toggle switch states for dark and light mode 
     const [isChecked, setIsChecked] = useState(false)
 
     return (
