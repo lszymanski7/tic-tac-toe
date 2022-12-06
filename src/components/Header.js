@@ -3,7 +3,10 @@ import ToggleSwitch from './ToggleSwitch'
 import githubLogo from '../assets/images/logos/github.svg'
 
 const Header = () => {
+    // Game title
     const title = 'Tic-Tac-Toe'
+
+    // Dark and light mode toggle switch states
     const [isChecked, setIsChecked] = useState(false)
 
     return (
