@@ -4,8 +4,17 @@ import oIcon from '../assets/images/shapes/o.svg'
 import xIcon from '../assets/images/shapes/x.svg'
 
 const Square = ({ animation, className, handleOnClick, index, symbol, winningLine }) => {
-    const icon = symbol === 'O' ? oIcon : symbol === 'X' ? xIcon : symbol
-    const winAnimation = winningLine ? animation.line : animation.notLine
+    // Icon that fills a square on the board (X or O)
+    const icon = symbol === 'O' ? oIcon : symbol === 'X' ? xIcon : null
+
+    // Function that sets the animation for a win, draw or game in progress
+    const setAnimation = () => {
+        if (typeof animation === 'object') {
+            return winningLine ? animation.line : animation.notLine
+        } else {
+            return animation
+        }
+    }
 
     return (
         <div className={className}>
@@ -17,7 +26,7 @@ const Square = ({ animation, className, handleOnClick, index, symbol, winningLin
                 {icon && (
                     <img
                         alt={`${symbol} Icon`}
-                        className={'square__symbol' + (winAnimation !== undefined ? winAnimation : ' ' + animation)}
+                        className={'square__symbol' + ' ' + setAnimation()}
                         src={icon}
                     />
                 )}
