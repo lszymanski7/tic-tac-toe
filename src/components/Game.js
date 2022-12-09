@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import React, { useState } from 'react'
 import Board from './Board'
 import Header from './Header'
@@ -7,7 +5,7 @@ import Score from './Score'
 import checkWinner from './../utils/game-rules'
 
 const Game = () => {
-    // Default values for game states
+    // Default values (game states)
     const defaultBoard = Array(9).fill(null)
     const defaultScore = {
         player1: 0,
@@ -27,14 +25,18 @@ const Game = () => {
         }
     }
     const defaultWinner = null
+    const defaultAnimation = 'scale'
+    const defaultReset = false
 
     // Game states
     const [board, setBoard] = useState(defaultBoard)
     const [score, setScore] = useState(defaultScore)
     const [players, setPlayers] = useState(defaultPlayers)
     const [winner, setWinner] = useState(defaultWinner)
+    const [animation, setAnimation] = useState(defaultAnimation)
+    const [reset, setReset] = useState(defaultReset)
 
-    // Update the board (change the value for a specific index)
+    // Function that updates the board (changes the value of a specific index)
     const updateBoard = (i) => {
         const nextState = board.map((element, index) => {
             if (index === i) {
@@ -48,18 +50,20 @@ const Game = () => {
         return nextState
     }
 
-    // Update the score (increase the value by 1)
+    // Function that updates the score (increases the value by 1)
     const updateScore = (winner) => {
-        if (winner.symbol === 'X') {
-            setScore({ ...score, player1: score.player1 + 1 })
-        } else if (winner.symbol === 'O') {
-            setScore({ ...score, player2: score.player2 + 1 })
+        if (winner !== null) {
+            if (winner.symbol === 'X') {
+                setScore({ ...score, player1: score.player1 + 1 })
+            } else {
+                setScore({ ...score, player2: score.player2 + 1 })
+            }
         } else {
             setScore({ ...score, draw: score.draw + 1 })
         }
     }
 
-    // Update the player's priority (determine who will start the game)
+    // Function that updates the player's priority (determines who will start the game)
     const updatePriority = () => {
         if (players.player1.priority) {
             setPlayers({
@@ -74,7 +78,7 @@ const Game = () => {
         }
     }
 
-    // Update the player's turn (determine who has the next move)
+    // Function that updates the player's turn (determines who has the next move)
     const updateTurn = () => {
         if (players.player1.turn) {
             setPlayers({
@@ -89,7 +93,7 @@ const Game = () => {
         }
     }
 
-    // Update the winner (determine who won the game)
+    // Function that updates the winner (determines who won the game)
     const updateWinner = (board) => {
         const nextState = checkWinner(board)
         setWinner(nextState)
@@ -97,41 +101,85 @@ const Game = () => {
         return nextState
     }
 
-    // Reset the game
-    const resetGame = () => {
-        setBoard(defaultBoard)
-        setWinner(defaultWinner)
-        updatePriority()
+    // Function that updates the animation displayed after a win or draw
+    const updateAnimation = (win) => {
+        if (win) {
+            setTimeout(() => {
+                setAnimation({
+                    line: 'blink',
+                    notLine: 'fade'
+                })
+            }, 400)
+        } else {
+            setTimeout(() => {
+                setAnimation('fade')
+            }, 400)
+        }
+    }
+
+    // Function that allows to reset the game after the animation ends
+    const updateReset = (win) => {
+        if (win) {
+            setTimeout(() => {
+                setReset(true)
+            }, 2600)
+        } else {
+            setTimeout(() => {
+                setReset(true)
+            }, 700)
+        }
     }
 
     // Call functions after clicking a cell on the board
     const handleOnClick = (i) => {
         if (winner === null && board[i] === null) {
+            // Step 1: Update the board
             const updatedBoard = updateBoard(i)
+
+            // Step 2: Update the winner
             const updatedWinner = updateWinner(updatedBoard)
-            updatedWinner === null ? updateTurn() : updateScore(updatedWinner)
+
+            // Step 3: Update the player's turn
+            updateTurn()
+
+            if (!updatedBoard.includes(null) || updatedWinner !== null) {
+                // Step 4: Update the player's priority
+                updatePriority()
+
+                // Step 5: Update the score
+                updateScore(updatedWinner)
+
+                // Step 6: Update the animation
+                updateAnimation(updatedWinner)
+
+                // Step 7: Update the reset value
+                updateReset(updatedWinner)
+            }
         }
 
-        winner !== null && resetGame()
+        // Step 8: Reset the game (set default values)
+        if (reset) {
+            setBoard(defaultBoard)
+            setWinner(defaultWinner)
+            setAnimation(defaultAnimation)
+            setReset(defaultReset)
+        }
     }
-
-    // Log values
-    console.log('Board:', board)
-    console.log('Score:', score)
-    console.log('Players:', players)
-    console.log('Winner:', winner)
 
     return (
         <div className="flexbox-column fullscreen">
             <Header />
             <Board
+                animation={animation}
                 board={board}
                 handleOnClick={handleOnClick}
+                winner={winner}
             />
             <Score
+                draw={!board.includes(null)}
                 players={players}
                 score={score}
-                winner={winner}
+                win={winner !== null}
             />
         </div>
     )

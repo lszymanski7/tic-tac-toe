@@ -5,14 +5,16 @@ import bracketRightIcon from '../assets/images/shapes/bracket-right.svg'
 import oIcon from '../assets/images/shapes/o.svg'
 import xIcon from '../assets/images/shapes/x.svg'
 
-const Score = ({ players, score, winner }) => {
+const Score = ({ draw, players, score, win }) => {
+    // Game in progress (neither win nor draw)
+    const inProgress = !win && !draw
+
     return (
         <div className="flexbox-row score">
             <div className="flexbox-column score__container">
                 <div
                     className={
-                        'flexbox-row' +
-                        (winner === null && players.player1.turn ? ' score__turn' : '')
+                        'flexbox-row' + (inProgress && players.player1.turn ? ' score__turn' : '')
                     }
                 >
                     <p className="score__name">Player 1</p>
@@ -41,8 +43,7 @@ const Score = ({ players, score, winner }) => {
             <div className="flexbox-column score__container">
                 <div
                     className={
-                        'flexbox-row' +
-                        (winner === null && players.player2.turn ? ' score__turn' : '')
+                        'flexbox-row' + (inProgress && players.player2.turn ? ' score__turn' : '')
                     }
                 >
                     <p className="score__name">Player 2</p>
@@ -69,9 +70,10 @@ const Score = ({ players, score, winner }) => {
 }
 
 Score.propTypes = {
+    draw: PropTypes.bool.isRequired,
     players: PropTypes.object.isRequired,
     score: PropTypes.object.isRequired,
-    winner: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    win: PropTypes.bool.isRequired
 }
 
 export { Score as default }
