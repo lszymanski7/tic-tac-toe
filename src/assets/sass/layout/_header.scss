@@ -4,11 +4,11 @@
 
 .header {
   align-items: center;
-  gap: 25px;
+  gap: 2.5rem;
   padding: map-get($spaces, 'md') map-get($spaces, 'md') map-get($spaces, 'xxl');
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    gap: 60px;
+    gap: 6rem;
     padding: map-get($spaces, 'md') map-get($spaces, 'md') map-get($spaces, 'xl');
   }
 }
@@ -28,10 +28,10 @@
 .header__title {
   font-size: 8.2rem;
   font-weight: 800;
-  @include drop-shadow(4px, 4px, 4px, map-get($colors, 'shadow', 'black-25'));
+  @include drop-shadow(0.4rem, 0.4rem, 0.4rem, map-get($colors, 'shadow', 'black-25'));
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     font-size: 5.4rem;
-    @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-25'));
+    @include drop-shadow(0.3rem, 0.3rem, 0.3rem, map-get($colors, 'shadow', 'black-25'));
   }
 }

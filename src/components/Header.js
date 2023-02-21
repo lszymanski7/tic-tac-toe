@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ToggleSwitch from './ToggleSwitch'
-import githubLogo from '../assets/images/logos/github.svg'
+import github from '../assets/images/logos/github.svg'
 
 const Header = () => {
     // Game title
@@ -16,7 +16,7 @@ const Header = () => {
                     <img
                         alt="GitHub Logo"
                         className="header__github"
-                        src={githubLogo}
+                        src={github}
                     />
                 </a>
                 <ToggleSwitch

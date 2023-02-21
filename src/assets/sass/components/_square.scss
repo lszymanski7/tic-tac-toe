@@ -3,33 +3,33 @@
 // ================================================================================================
 
 .square {
-  @include drop-shadow(3px, 3px, 3px, map-get($colors, 'shadow', 'black-25'));
+  @include drop-shadow(0.3rem, 0.3rem, 0.3rem, map-get($colors, 'shadow', 'black-25'));
   @include user-select(none);
 
   &.top {
-    border-top: 8px solid map-get($colors, 'basic', 'black');
+    border-top: 0.8rem solid map-get($colors, 'basic', 'black');
   }
 
   &.right {
-    border-right: 8px solid map-get($colors, 'basic', 'black');
+    border-right: 0.8rem solid map-get($colors, 'basic', 'black');
   }
 
   &.bottom {
-    border-bottom: 8px solid map-get($colors, 'basic', 'black');
+    border-bottom: 0.8rem solid map-get($colors, 'basic', 'black');
   }
 
   &.left {
-    border-left: 8px solid map-get($colors, 'basic', 'black');
+    border-left: 0.8rem solid map-get($colors, 'basic', 'black');
   }
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    @include drop-shadow(2px, 2px, 2px, map-get($colors, 'shadow', 'black-25'));
+    @include drop-shadow(0.2rem, 0.2rem, 0.2rem, map-get($colors, 'shadow', 'black-25'));
 
     &.top,
     &.right,
     &.bottom,
     &.left {
-      border-width: 6px;
+      border-width: 0.6rem;
     }
   }
 }
