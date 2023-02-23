@@ -5,17 +5,17 @@
 @charset 'utf-8';
 
 @import 
-  './abstracts/mixins', 
+  './abstracts/mixins',
   './abstracts/variables';
 
 @import 
-  './base/animations', 
+  './base/animations',
   './base/base',
   './base/reset',
   './base/typography';
 
 @import 
-  './layout/flexbox',
+  './layout/fullscreen',
   './layout/header';
 
 @import 
@@ -23,3 +23,7 @@
   './components/score',
   './components/square',
   './components/toggle-switch';
+
+@import 
+  './themes/dark',
+  './themes/light';
