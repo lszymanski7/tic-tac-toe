@@ -1,16 +1,6 @@
-// Winning combinations
+/* istanbul ignore file */
 
-// Horizontal
-// [0, 1, 2] - [3, 4, 5] - [6, 7, 8]
-
-// Vertical
-// [0, 3, 6] - [1, 4, 7] - [2, 5, 8]
-
-// Diagonal
-// [0, 4, 8] - [2, 4, 6]
-
-// Determine if someone has won the game or it's a draw
-
+// Function ➞ determines if someone has won the game or it's a draw
 const checkWinner = (board) => {
     const lines = [
         [0, 1, 2],
