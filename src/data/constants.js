@@ -7,4 +7,11 @@ const LOGOS = {
     github: require('../assets/images/logos/github.svg')
 }
 
-export { LOGOS }
+const SHAPES = {
+    moon: require('../assets/images/shapes/moon.svg'),
+    o: require('../assets/images/shapes/o.svg'),
+    sun: require('../assets/images/shapes/sun.svg'),
+    x: require('../assets/images/shapes/x.svg')
+}
+
+export { LOGOS, SHAPES }
