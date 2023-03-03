@@ -4,34 +4,95 @@
 
 .header {
   align-items: center;
-  gap: 2.5rem;
-  padding: map-get($spaces, 'md') map-get($spaces, 'md') map-get($spaces, 'xxl');
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1.6rem 1.6rem 3.6rem;
+}
 
-  @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    gap: 6rem;
-    padding: map-get($spaces, 'md') map-get($spaces, 'md') map-get($spaces, 'xl');
+.header__widgets-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  a {
+    text-decoration: none;
   }
 }
 
-.header__container {
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.header__github {
+.header__github-logo {
   display: block;
-  height: 40px;
-  width: 40px;
+  height: 24px;
+  pointer-events: none;
+  width: 24px;
 }
 
-.header__title {
-  font-size: 8.2rem;
-  font-weight: 800;
-  @include drop-shadow(0.4rem, 0.4rem, 0.4rem, map-get($colors, 'shadow', 'black-25'));
+.header__github-logo--dark {
+  filter: invert(100%) sepia(1%) saturate(106%) hue-rotate(299deg) brightness(116%) contrast(96%); // HEX: #FAFAFA
+}
 
-  @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    font-size: 5.4rem;
-    @include drop-shadow(0.3rem, 0.3rem, 0.3rem, map-get($colors, 'shadow', 'black-25'));
+.header__github-logo--light {
+  filter: invert(0%) sepia(0%) saturate(7480%) hue-rotate(59deg) brightness(97%) contrast(105%); // HEX: #000000
+}
+
+.header__game-name {
+  font-family: 'Atma';
+  font-size: 6.4rem;
+  @include drop-shadow(0.3rem, 0.3rem, 0.3rem, map-get($colors, 'shadow', 'black-25'));
+}
+
+// Landscape phones
+
+@media (min-width: map-get($breakpoints, 'sm')) {
+  .header {
+    gap: 2.5rem;
+  }
+
+  .header__github-logo {
+    height: 26px;
+    width: 26px;
+  }
+
+  .header__game-name {
+    font-size: 8.4rem;
+    @include drop-shadow(0.4rem, 0.4rem, 0.4rem, map-get($colors, 'shadow', 'black-25'));
+  }
+}
+
+// Tablets
+
+@media (min-width: map-get($breakpoints, 'md')) {
+  .header {
+    gap: 2rem;
+  }
+
+  .header__github-logo {
+    height: 28px;
+    width: 28px;
+  }
+
+  .header__game-name {
+    font-size: 10.8rem;
+    @include drop-shadow(0.5rem, 0.5rem, 0.5rem, map-get($colors, 'shadow', 'black-25'));
+  }
+}
+
+// Desktops
+
+@media (min-width: map-get($breakpoints, 'lg')) {
+  .header {
+    gap: 1.5rem;
+  }
+
+  .header__github-logo {
+    height: 30px;
+    width: 30px;
+  }
+
+  .header__game-name {
+    font-size: 12.8rem;
+    @include drop-shadow(0.6rem, 0.6rem, 0.6rem, map-get($colors, 'shadow', 'black-25'));
   }
 }
