@@ -4,18 +4,18 @@
 
 body {
   color: map-get($colors, 'basic', 'black');
-  font-family: 'Titan One';
+  font-family: 'Atma';
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Titan One
+// Atma
 
 @font-face {
   font-display: swap;
-  font-family: 'Titan One';
+  font-family: 'Atma';
   font-style: normal;
-  font-weight: 700;
-  src: url('/src/assets/fonts/TitanOne-Regular.ttf') format('truetype');
+  font-weight: 600;
+  src: url('/src/assets/fonts/Atma.ttf') format('truetype');
 }

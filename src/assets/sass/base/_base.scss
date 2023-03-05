@@ -12,7 +12,3 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
-body {
-  background: map-get($colors, 'basic', 'white');
-}
