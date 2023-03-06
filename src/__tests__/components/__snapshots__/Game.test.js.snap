@@ -60,7 +60,7 @@ exports[`Game should be rendered correctly. 1`] = `
         class="board__row"
       >
         <div
-          class="square"
+          class="square square--light"
         >
           <button
             aria-label="Square 0"
@@ -68,7 +68,7 @@ exports[`Game should be rendered correctly. 1`] = `
           />
         </div>
         <div
-          class="square left right"
+          class="square square--light right left"
         >
           <button
             aria-label="Square 1"
@@ -76,7 +76,7 @@ exports[`Game should be rendered correctly. 1`] = `
           />
         </div>
         <div
-          class="square"
+          class="square square--light"
         >
           <button
             aria-label="Square 2"
@@ -88,7 +88,7 @@ exports[`Game should be rendered correctly. 1`] = `
         class="board__row"
       >
         <div
-          class="square top bottom"
+          class="square square--light top bottom"
         >
           <button
             aria-label="Square 3"
@@ -96,7 +96,7 @@ exports[`Game should be rendered correctly. 1`] = `
           />
         </div>
         <div
-          class="square left right top bottom"
+          class="square square--light top right bottom left"
         >
           <button
             aria-label="Square 4"
@@ -104,7 +104,7 @@ exports[`Game should be rendered correctly. 1`] = `
           />
         </div>
         <div
-          class="square top bottom"
+          class="square square--light top bottom"
         >
           <button
             aria-label="Square 5"
@@ -116,7 +116,7 @@ exports[`Game should be rendered correctly. 1`] = `
         class="board__row"
       >
         <div
-          class="square"
+          class="square square--light"
         >
           <button
             aria-label="Square 6"
@@ -124,7 +124,7 @@ exports[`Game should be rendered correctly. 1`] = `
           />
         </div>
         <div
-          class="square left right"
+          class="square square--light right left"
         >
           <button
             aria-label="Square 7"
@@ -132,7 +132,7 @@ exports[`Game should be rendered correctly. 1`] = `
           />
         </div>
         <div
-          class="square"
+          class="square square--light"
         >
           <button
             aria-label="Square 8"

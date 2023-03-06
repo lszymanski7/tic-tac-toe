@@ -140,7 +140,7 @@ const Game = () => {
 
     /* istanbul ignore next */
 
-    // Function ➞ handles clicking a cell on the board
+    // Function ➞ handles clicking a square on the board
     const handleOnClick = (i) => {
         if (board[i] === null && winner === null) {
             const updatedBoard = updateBoard(i)

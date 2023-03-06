@@ -1,9 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Square from './Square'
+import useTheme from '../hooks/useTheme'
 
 const Board = ({ animation, board, handleOnClick, winner }) => {
-    // Function that renders squares on the board
+    // Context value for dark and light theme
+    const { theme } = useTheme()
+
+    /* istanbul ignore next */
+
+    // Function ➞ renders square on the board
     const renderSquare = (className, i) => {
         return (
             <Square
@@ -18,21 +24,21 @@ const Board = ({ animation, board, handleOnClick, winner }) => {
     }
 
     return (
-        <div className="flexbox-column board">
-            <div className="flexbox-row">
-                {renderSquare('square', 0)}
-                {renderSquare('square left right', 1)}
-                {renderSquare('square', 2)}
+        <div className="board">
+            <div className="board__row">
+                {renderSquare(`square square--${theme}`, 0)}
+                {renderSquare(`square square--${theme} right left`, 1)}
+                {renderSquare(`square square--${theme}`, 2)}
             </div>
-            <div className="flexbox-row">
-                {renderSquare('square top bottom', 3)}
-                {renderSquare('square left right top bottom', 4)}
-                {renderSquare('square top bottom', 5)}
+            <div className="board__row">
+                {renderSquare(`square square--${theme} top bottom`, 3)}
+                {renderSquare(`square square--${theme} top right bottom left`, 4)}
+                {renderSquare(`square square--${theme} top bottom`, 5)}
             </div>
-            <div className="flexbox-row">
-                {renderSquare('square', 6)}
-                {renderSquare('square left right', 7)}
-                {renderSquare('square', 8)}
+            <div className="board__row">
+                {renderSquare(`square square--${theme}`, 6)}
+                {renderSquare(`square square--${theme} right left`, 7)}
+                {renderSquare(`square square--${theme}`, 8)}
             </div>
         </div>
     )

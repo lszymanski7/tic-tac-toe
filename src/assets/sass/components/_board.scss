@@ -3,9 +3,15 @@
 // ================================================================================================
 
 .board {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 map-get($spaces, 'md');
+  padding: 0 1.6rem;
+}
+
+.board__row {
+  display: flex;
+  flex-direction: row;
 }
