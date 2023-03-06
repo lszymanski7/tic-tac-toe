@@ -2,7 +2,7 @@
 // Dark theme styles
 // ================================================================================================
 
-.background-dark {
-  background: map-get($colors, 'application', 'gray');
+.theme-dark {
+  background: map-get($colors, 'application', 'gray-200');
+  color: map-get($colors, 'application', 'gray-100');
 }
-  

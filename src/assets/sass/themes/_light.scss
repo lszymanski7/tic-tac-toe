@@ -2,7 +2,8 @@
 // Light theme styles
 // ================================================================================================
 
-.background-light {
+.theme-light {
   background: map-get($colors, 'basic', 'white');
+  color: map-get($colors, 'basic', 'black');
 }
   
