@@ -1,12 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Square from './Square'
-import useTheme from '../hooks/useTheme'
 
 const Board = ({ animation, board, handleOnClick, winner }) => {
-    // Context value for dark and light theme
-    const { theme } = useTheme()
-
     /* istanbul ignore next */
 
     // Function ➞ renders square on the board
@@ -26,19 +22,19 @@ const Board = ({ animation, board, handleOnClick, winner }) => {
     return (
         <div className="board">
             <div className="board__row">
-                {renderSquare(`square square--${theme}`, 0)}
-                {renderSquare(`square square--${theme} right left`, 1)}
-                {renderSquare(`square square--${theme}`, 2)}
+                {renderSquare(null, 0)}
+                {renderSquare('right left', 1)}
+                {renderSquare(null, 2)}
             </div>
             <div className="board__row">
-                {renderSquare(`square square--${theme} top bottom`, 3)}
-                {renderSquare(`square square--${theme} top right bottom left`, 4)}
-                {renderSquare(`square square--${theme} top bottom`, 5)}
+                {renderSquare('top bottom', 3)}
+                {renderSquare('top right bottom left', 4)}
+                {renderSquare('top bottom', 5)}
             </div>
             <div className="board__row">
-                {renderSquare(`square square--${theme}`, 6)}
-                {renderSquare(`square square--${theme} right left`, 7)}
-                {renderSquare(`square square--${theme}`, 8)}
+                {renderSquare(null, 6)}
+                {renderSquare('right left', 7)}
+                {renderSquare(null, 8)}
             </div>
         </div>
     )
