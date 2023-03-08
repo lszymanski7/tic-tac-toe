@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Square should be rendered correctly. 1`] = `
+<div>
+  <div
+    class="square square--light"
+  >
+    <button
+      aria-label="Square 0"
+      class="square__button"
+    />
+  </div>
+</div>
+`;
