@@ -1,59 +1,108 @@
 // ================================================================================================
-// Cell styles
+// Square styles
 // ================================================================================================
 
 .square {
-  @include drop-shadow(0.3rem, 0.3rem, 0.3rem, map-get($colors, 'shadow', 'black-25'));
-  @include user-select(none);
+  border-width: 0.6rem;
 
   &.top {
-    border-top: 0.8rem solid map-get($colors, 'basic', 'black');
+    border-top-style: solid;
   }
 
   &.right {
-    border-right: 0.8rem solid map-get($colors, 'basic', 'black');
+    border-right-style: solid;
   }
 
   &.bottom {
-    border-bottom: 0.8rem solid map-get($colors, 'basic', 'black');
+    border-bottom-style: solid;
   }
 
   &.left {
-    border-left: 0.8rem solid map-get($colors, 'basic', 'black');
+    border-left-style: solid;
   }
+}
 
-  @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    @include drop-shadow(0.2rem, 0.2rem, 0.2rem, map-get($colors, 'shadow', 'black-25'));
+.square--dark {
+  border-color: map-get($colors, 'basic', 'white');
+}
 
-    &.top,
-    &.right,
-    &.bottom,
-    &.left {
-      border-width: 0.6rem;
-    }
-  }
+.square--light {
+  border-color: map-get($colors, 'basic', 'black');
 }
 
 .square__button {
   background: none;
   border: 0;
   display: block;
-  height: 152px;
+  height: 96px;
   padding: 0;
-  width: 152px;
-
-  @media screen and (max-width: map-get($breakpoints, 'sm')) {
-    height: 104px;
-    width: 104px;
-  }
+  width: 96px;
 }
 
 .square__symbol {
-  height: 108px;
-  width: 108px;
+  height: 64px;
+  pointer-events: none;
+  width: 64px;
+}
 
-  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+.square__symbol--dark {
+  filter: invert(100%) sepia(1%) saturate(106%) hue-rotate(299deg) brightness(116%) contrast(96%); // HEX: #FAFAFA
+}
+
+.square__symbol--light {
+  filter: invert(0%) sepia(0%) saturate(7480%) hue-rotate(59deg) brightness(97%) contrast(105%); // HEX: #000000
+}
+
+// Landscape phones
+
+@media (min-width: map-get($breakpoints, 'sm')) {
+  .square {
+    border-width: 0.7rem;
+  }
+
+  .square__button {
+    height: 108px;
+    width: 108px;
+  }
+
+  .square__symbol {
     height: 72px;
     width: 72px;
+  }
+}
+
+// Tablets
+
+@media (min-width: map-get($breakpoints, 'md')) {
+  .square {
+    border-width: 0.9rem;
+  }
+
+  .square__button {
+    height: 136px;
+    width: 136px;
+  }
+
+  .square__symbol {
+    height: 90px;
+    width: 90px;
+  }
+}
+
+// Desktops
+
+@media (min-width: map-get($breakpoints, 'lg')) {
+  .square {
+    border-width: 1rem;
+  }
+
+  .square__button {
+    height: 148px;
+    width: 148px;
+  }
+
+  .square__symbol {
+    height: 98px;
+    width: 98px;
   }
 }
