@@ -9,9 +9,34 @@
   justify-content: center;
   margin: 0 auto;
   padding: 0 1.6rem;
+  @include drop-shadow(0.3rem, 0.3rem, 0.3rem, map-get($colors, 'shadow', 'black-25'));
 }
 
 .board__row {
   display: flex;
   flex-direction: row;
+}
+
+// Landscape phones
+
+@media (min-width: map-get($breakpoints, 'sm')) {
+  .board {
+    @include drop-shadow(0.4rem, 0.4rem, 0.4rem, map-get($colors, 'shadow', 'black-25'));
+  }
+}
+
+// Tablets
+
+@media (min-width: map-get($breakpoints, 'md')) {
+  .board {
+    @include drop-shadow(0.5rem, 0.5rem, 0.5rem, map-get($colors, 'shadow', 'black-25'));
+  }
+}
+
+// Desktops
+
+@media (min-width: map-get($breakpoints, 'lg')) {
+  .board {
+    @include drop-shadow(0.6rem, 0.6rem, 0.6rem, map-get($colors, 'shadow', 'black-25'));
+  }
 }
