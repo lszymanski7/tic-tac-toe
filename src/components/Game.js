@@ -97,6 +97,17 @@ const Game = () => {
 
     /* istanbul ignore next */
 
+    // Function ➞ gets the player's turn (X or O)
+    const getTurn = () => {
+        if (players.player1.turn) {
+            return players.player1.symbol
+        } else {
+            return players.player2.symbol
+        }
+    }
+
+    /* istanbul ignore next */
+
     // Function ➞ updates the winner (determines who won the game)
     const updateWinner = (board) => {
         const nextState = checkWinner(board)
@@ -173,10 +184,9 @@ const Game = () => {
                 winner={winner}
             />
             <Score
-                draw={!board.includes(null)}
-                players={players}
+                inProgress={board.includes(null) && winner === null}
                 score={score}
-                win={winner !== null}
+                turn={getTurn()}
             />
         </div>
     )

@@ -147,15 +147,11 @@ exports[`Game should be rendered correctly. 1`] = `
       <div
         class="score__container"
       >
-        <div
-          class="score__test score__turn"
+        <p
+          class="score__turn"
         >
-          <p
-            class="score__name"
-          >
-            Player 1 [X]
-          </p>
-        </div>
+          Player 1  [X]
+        </p>
         <p>
           0
         </p>
@@ -173,15 +169,11 @@ exports[`Game should be rendered correctly. 1`] = `
       <div
         class="score__container"
       >
-        <div
-          class="score__test"
+        <p
+          class=""
         >
-          <p
-            class="score__name"
-          >
-            Player 2 [O]
-          </p>
-        </div>
+          Player 2  [O]
+        </p>
         <p>
           0
         </p>
