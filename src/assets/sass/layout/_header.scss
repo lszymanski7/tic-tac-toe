@@ -39,7 +39,7 @@
 
 .header__game-name {
   font-family: 'Atma';
-  font-size: 6.4rem;
+  font-size: 7.2rem;
   white-space: nowrap;
   @include drop-shadow(0.3rem, 0.3rem, 0.3rem, map-get($colors, 'shadow', 'black-25'));
 }
@@ -57,7 +57,7 @@
   }
 
   .header__game-name {
-    font-size: 8.4rem;
+    font-size: 9.2rem;
     @include drop-shadow(0.4rem, 0.4rem, 0.4rem, map-get($colors, 'shadow', 'black-25'));
   }
 }
