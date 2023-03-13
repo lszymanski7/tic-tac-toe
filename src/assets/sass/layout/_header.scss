@@ -6,7 +6,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 6rem;
   padding: 1.6rem 1.6rem 4.8rem;
 }
 
@@ -40,6 +40,7 @@
 .header__game-name {
   font-family: 'Atma';
   font-size: 6.4rem;
+  white-space: nowrap;
   @include drop-shadow(0.3rem, 0.3rem, 0.3rem, map-get($colors, 'shadow', 'black-25'));
 }
 
@@ -47,7 +48,7 @@
 
 @media (min-width: map-get($breakpoints, 'sm')) {
   .header {
-    gap: 2.5rem;
+    gap: 5rem;
   }
 
   .header__github-logo {
@@ -65,7 +66,7 @@
 
 @media (min-width: map-get($breakpoints, 'md')) {
   .header {
-    gap: 2rem;
+    gap: 4rem;
   }
 
   .header__github-logo {
@@ -83,7 +84,7 @@
 
 @media (min-width: map-get($breakpoints, 'lg')) {
   .header {
-    gap: 1.5rem;
+    gap: 3rem;
   }
 
   .header__github-logo {
