@@ -15,16 +15,26 @@ const Score = ({ inProgress, score, turn }) => {
     return (
         <div className="score">
             <div className="score__container">
-                <p className={xTurn}>Player 1  [X]</p>
-                <p>{score.player1}</p>
+                <p
+                    className={xTurn}
+                    data-testid="player1-caption"
+                >
+                    Player 1  [X]
+                </p>
+                <p data-testid="player1-score">{score.player1}</p>
             </div>
             <div className="score__container">
-                <p>Draw</p>
-                <p>{score.draw}</p>
+                <p data-testid="draw-caption">Draw</p>
+                <p data-testid="draw-score">{score.draw}</p>
             </div>
             <div className="score__container">
-                <p className={oTurn}>Player 2  [O]</p>
-                <p>{score.player2}</p>
+                <p
+                    className={oTurn}
+                    data-testid="player2-caption"
+                >
+                    Player 2  [O]
+                </p>
+                <p data-testid="player2-score">{score.player2}</p>
             </div>
         </div>
     )

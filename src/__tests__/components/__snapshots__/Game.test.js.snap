@@ -149,20 +149,27 @@ exports[`Game should be rendered correctly. 1`] = `
       >
         <p
           class="score__turn"
+          data-testid="player1-caption"
         >
           Player 1  [X]
         </p>
-        <p>
+        <p
+          data-testid="player1-score"
+        >
           0
         </p>
       </div>
       <div
         class="score__container"
       >
-        <p>
+        <p
+          data-testid="draw-caption"
+        >
           Draw
         </p>
-        <p>
+        <p
+          data-testid="draw-score"
+        >
           0
         </p>
       </div>
@@ -171,10 +178,13 @@ exports[`Game should be rendered correctly. 1`] = `
       >
         <p
           class=""
+          data-testid="player2-caption"
         >
           Player 2  [O]
         </p>
-        <p>
+        <p
+          data-testid="player2-score"
+        >
           0
         </p>
       </div>
