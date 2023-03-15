@@ -21,7 +21,7 @@
 
 <!-- TIC-TAC-TOE -->
 # Tic-Tac-Toe
-Tic-tac-toe is one of the most famous strategy games in the world. It's played by two players, usually on a three-by-three board. Each of them aims to win by covering three squares in one line with the same symbol - X or O. This application is an implementation of this game.
+Tic-tac-toe is one of the most famous strategy games in the world. It's played by two players, usually on a three-by-three board. Each of them aims to win by covering three squares in one line with the same symbol - X or O. This application is an implementation of this game and allows you to play with your friends without using paper and pencil.
 
 🚀 **Live demo:** <a href="https://lszymanski7-tic-tac-toe.netlify.app">https://lszymanski7-tic-tac-toe.netlify.app</a>
 
