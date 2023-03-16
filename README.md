@@ -41,10 +41,16 @@ Tic-tac-toe is one of the most famous strategy games in the world. It's played b
 ## Game Rules
 - In progress...
 
+
+
+
+
 <div align="center">
 
   ![Winning Combinations](./docs/winning-combinations.png)
-  
+
+  **Fig.1.** All winning combinations (horizontal, vertical and diagonal).
+
 </div>
 
 
