@@ -39,11 +39,7 @@ Tic-tac-toe is one of the most famous strategy games in the world. It's played b
 
 <!-- GAME RULES -->
 ## Game Rules
-- In progress...
-
-
-
-
+The game is played on a three-by-three board. Two players take turns marking empty squares with their symbol - X or O. In each game, the first move belongs to a different player to even out the odds of winning. If one of the players marks three squares in a line with his symbol, that player wins. The game also ends when all the squares are marked and no one wins - then it's a draw.
 
 <div align="center">
 
@@ -52,9 +48,6 @@ Tic-tac-toe is one of the most famous strategy games in the world. It's played b
   **Fig.1.** All winning combinations (horizontal, vertical and diagonal).
 
 </div>
-
-
-
 
 <!-- FEATURES -->
 ## Features
