@@ -43,7 +43,12 @@ Tic-tac-toe is one of the most famous strategy games in the world. It's played b
 
 <!-- FEATURES -->
 ## Features
-- In progress...
+- Changing the player who starts the game after each completed game.
+- Highlighting a player's turn in red (X or O).
+- Displaying an animation when someone wins or it's a draw.
+- Counting the game score and resetting it after refreshing the page.
+- Saving data to localStorage.
+- Toggling between light and dark theme.
 
 <!-- TECHNOLOGIES -->
 ## Technologies
