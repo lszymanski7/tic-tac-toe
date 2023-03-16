@@ -1,13 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import oIcon from '../assets/images/shapes/o.svg'
-import xIcon from '../assets/images/shapes/x.svg'
+import { SHAPES } from '../data/constants'
+import useTheme from '../hooks/useTheme'
 
 const Square = ({ animation, className, handleOnClick, index, symbol, winningLine }) => {
-    // Icon that fills a square on the board (X or O)
-    const icon = symbol === 'O' ? oIcon : symbol === 'X' ? xIcon : null
+    /* istanbul ignore next */
 
-    // Function that sets the animation for a win, draw or game in progress
+    // Context value for dark and light theme
+    const { theme } = useTheme()
+
+    /* istanbul ignore next */
+
+    // Function ➞ sets the animation of a win, draw or game in progress
     const setAnimation = () => {
         if (typeof animation === 'object') {
             return winningLine ? animation.line : animation.notLine
@@ -17,17 +21,17 @@ const Square = ({ animation, className, handleOnClick, index, symbol, winningLin
     }
 
     return (
-        <div className={className}>
+        <div className={`square square--${theme}` + (className !== null ? ' ' + className : '')}>
             <button
                 aria-label={`Square ${index}`}
                 className="square__button"
                 onClick={handleOnClick}
             >
-                {icon && (
+                {symbol !== null && (
                     <img
-                        alt={`${symbol} Icon`}
-                        className={'square__symbol' + ' ' + setAnimation()}
-                        src={icon}
+                        alt={symbol}
+                        className={`square__symbol square__symbol--${theme}` + ' ' + setAnimation()}
+                        src={symbol === 'X' ? SHAPES.x : SHAPES.o}
                     />
                 )}
             </button>
@@ -37,7 +41,7 @@ const Square = ({ animation, className, handleOnClick, index, symbol, winningLin
 
 Square.propTypes = {
     animation: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     handleOnClick: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
     symbol: PropTypes.string,

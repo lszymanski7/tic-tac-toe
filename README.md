@@ -1,7 +1,7 @@
 <!-- APPLICATION PREVIEW -->
 <div align="center">
   
-  In progress...
+  ![Tic-Tac-Toe Header](./docs/application.png)
   
 </div>
 
@@ -21,41 +21,58 @@
 
 <!-- TIC-TAC-TOE -->
 # Tic-Tac-Toe
-In progress...
+Tic-tac-toe is one of the most famous strategy games in the world. It's played by two players, usually on a three-by-three board. Each of them aims to win by marking three squares in one line with the same symbol - X or O. This app is an implementation of this game and allows you to play with your friends without using paper and pencil.
 
 🚀 **Live demo:** <a href="https://lszymanski7-tic-tac-toe.netlify.app">https://lszymanski7-tic-tac-toe.netlify.app</a>
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
-1. [Features](#features)
-2. [Technologies](#technologies)
-3. [Getting Started](#getting-started)
+1. [Game Rules](#game-rules)
+2. [Features](#features)
+3. [Technologies](#technologies)
+4. [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Application](#application)
-4. [Contributing](#contributing)
-5. [Attribution](#attribution)
+5. [Contributing](#contributing)
 6. [License](#license)
+
+<!-- GAME RULES -->
+## Game Rules
+The game is played on a three-by-three board. Two players take turns marking empty squares with their symbol - X or O. In each game, the first move belongs to a different player to even the odds of winning. If one of the players marks three squares in a line with his symbol, that player wins. The game also ends when all the squares are marked and no one has a winning combination (Fig. 1.) - then it's a draw.
+
+<div align="center">
+
+  ![Winning Combinations](./docs/winning-combinations.png)
+
+  **Fig. 1.** All winning combinations (horizontal, vertical and diagonal).
+
+</div>
 
 <!-- FEATURES -->
 ## Features
-- In progress...
+- Changing the starting player after each completed game.
+- Highlighting a player's turn in red (X or O).
+- Displaying an animation when someone wins or it's a draw.
+- Counting the game score and resetting it after refreshing the page.
+- Saving data to localStorage.
+- Toggling between light and dark theme.
 
 <!-- TECHNOLOGIES -->
 ## Technologies
 ![JavaScript](https://img.shields.io/badge/JavaScript-555555?style=flat&logo=javascript&logoColor=F7DF1E)
 ![HTML](https://img.shields.io/badge/HTML-555555?style=flat&logo=html5&logoColor=E34F26)
 ![CSS](https://img.shields.io/badge/CSS-555555?style=flat&logo=css3&logoColor=1572B6)
-[![SASS](https://img.shields.io/badge/SASS%20|%20v1.58.0-555555?style=flat&logo=SASS&logoColor=CC6699)](https://sass-lang.com)
+[![SASS](https://img.shields.io/badge/SASS%20|%20v1.59.3-555555?style=flat&logo=SASS&logoColor=CC6699)](https://sass-lang.com)
 [![React](https://img.shields.io/badge/React%20|%20v18.1.0-555555?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org)
-[![Webpack](https://img.shields.io/badge/Webpack%20|%20v5.75.0-555555?style=flat&logo=webpack&logoColor=8DD6F9)](https://webpack.js.org)
-[![Babel](https://img.shields.io/badge/Babel%20|%20v7.20.12-555555?style=flat&logo=babel&logoColor=F9DC3E)](https://babeljs.io)
-[![Jest](https://img.shields.io/badge/Jest%20|%20v29.4.2-555555?style=flat&logo=jest&logoColor=C21325)](https://jestjs.io)
-[![Testing Library](https://img.shields.io/badge/Testing%20Library%20|%20v8.20.0-555555?style=flat&logo=testinglibrary&logoColor=E33332)](https://testing-library.com)
+[![Webpack](https://img.shields.io/badge/Webpack%20|%20v5.76.2-555555?style=flat&logo=webpack&logoColor=8DD6F9)](https://webpack.js.org)
+[![Babel](https://img.shields.io/badge/Babel%20|%20v7.21.3-555555?style=flat&logo=babel&logoColor=F9DC3E)](https://babeljs.io)
+[![Jest](https://img.shields.io/badge/Jest%20|%20v29.5.0-555555?style=flat&logo=jest&logoColor=C21325)](https://jestjs.io)
+[![Testing Library](https://img.shields.io/badge/Testing%20Library%20|%20v9.0.1-555555?style=flat&logo=testinglibrary&logoColor=E33332)](https://testing-library.com)
 [![Node.js](https://img.shields.io/badge/Node.js%20|%20v18.9.0-555555?style=flat&logo=node.js&logoColor=339933)](https://nodejs.org/en)
 [![Npm](https://img.shields.io/badge/Npm%20|%20v8.19.1-555555?style=flat&logo=npm&logoColor=CB3837)](https://npmjs.com)
 [![Express](https://img.shields.io/badge/Express%20%7C%20v4.18.2-555555?style=flat&logo=express&logoColor=FFFFFF)](https://expressjs.com)
-[![ESLint](https://img.shields.io/badge/ESLint%20%7C%20v8.33.0-555555?style=flat&logo=eslint&logoColor=4B32C3)](https://eslint.org)
+[![ESLint](https://img.shields.io/badge/ESLint%20%7C%20v8.36.0-555555?style=flat&logo=eslint&logoColor=4B32C3)](https://eslint.org)
 [![Prettier](https://img.shields.io/badge/Prettier%20%7C%20v2.8.3-555555?style=flat&logo=prettier&logoColor=F7B93E)](https://prettier.io)
 
 All technologies and tools were used in the latest version at the time of creating this project.
@@ -116,10 +133,6 @@ You can contribute by following these steps:
 4. Make necessary changes and commit them.
 5. Push changes to GitHub: `$ git push origin -u <branch-name>`
 6. Submit a new Pull Request on GitHub.
-
-<!-- ATTRIBUTION -->
-## Attribution
-- In progress...
 
 <!-- LICENSE -->
 ## License

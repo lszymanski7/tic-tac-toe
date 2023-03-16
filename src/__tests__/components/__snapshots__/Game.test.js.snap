@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game should be rendered correctly. 1`] = `
+<div>
+  <div
+    class="fullscreen"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="header__widgets-container"
+      >
+        <a
+          href="https://github.com/lszymanski7/tic-tac-toe"
+        >
+          <img
+            alt="GitHub Logo"
+            class="header__github-logo header__github-logo--light"
+            src="github.svg"
+          />
+        </a>
+        <div
+          class="toggle-switch"
+          data-testid="theme-switch"
+        >
+          <input
+            class="toggle-switch__input"
+            id="theme-switch"
+            type="checkbox"
+          />
+          <label
+            class="toggle-switch__label"
+            for="theme-switch"
+          >
+            <span
+              class="toggle-switch__icon moon-icon"
+              data-testid="moon"
+            />
+            <span
+              class="toggle-switch__icon sun-icon"
+              data-testid="sun"
+            />
+            <span
+              class="toggle-switch__slider"
+            />
+          </label>
+        </div>
+      </div>
+      <h1
+        class="header__game-name"
+      >
+        Tic-Tac-Toe
+      </h1>
+    </header>
+    <div
+      class="board"
+    >
+      <div
+        class="board__row"
+      >
+        <div
+          class="square square--light"
+        >
+          <button
+            aria-label="Square 0"
+            class="square__button"
+          />
+        </div>
+        <div
+          class="square square--light right left"
+        >
+          <button
+            aria-label="Square 1"
+            class="square__button"
+          />
+        </div>
+        <div
+          class="square square--light"
+        >
+          <button
+            aria-label="Square 2"
+            class="square__button"
+          />
+        </div>
+      </div>
+      <div
+        class="board__row"
+      >
+        <div
+          class="square square--light top bottom"
+        >
+          <button
+            aria-label="Square 3"
+            class="square__button"
+          />
+        </div>
+        <div
+          class="square square--light top right bottom left"
+        >
+          <button
+            aria-label="Square 4"
+            class="square__button"
+          />
+        </div>
+        <div
+          class="square square--light top bottom"
+        >
+          <button
+            aria-label="Square 5"
+            class="square__button"
+          />
+        </div>
+      </div>
+      <div
+        class="board__row"
+      >
+        <div
+          class="square square--light"
+        >
+          <button
+            aria-label="Square 6"
+            class="square__button"
+          />
+        </div>
+        <div
+          class="square square--light right left"
+        >
+          <button
+            aria-label="Square 7"
+            class="square__button"
+          />
+        </div>
+        <div
+          class="square square--light"
+        >
+          <button
+            aria-label="Square 8"
+            class="square__button"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="score"
+    >
+      <div
+        class="score__container"
+      >
+        <p
+          class="score__turn"
+          data-testid="player1-caption"
+        >
+          Player 1  [X]
+        </p>
+        <p
+          data-testid="player1-score"
+        >
+          0
+        </p>
+      </div>
+      <div
+        class="score__container"
+      >
+        <p
+          data-testid="draw-caption"
+        >
+          Draw
+        </p>
+        <p
+          data-testid="draw-score"
+        >
+          0
+        </p>
+      </div>
+      <div
+        class="score__container"
+      >
+        <p
+          class=""
+          data-testid="player2-caption"
+        >
+          Player 2  [O]
+        </p>
+        <p
+          data-testid="player2-score"
+        >
+          0
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,14 +1,8 @@
 // ================================================================================================
-// Base styles
+// Dark theme styles
 // ================================================================================================
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+.theme-dark {
+  background: map-get($colors, 'application', 'gray-200');
+  color: map-get($colors, 'application', 'gray-100');
 }

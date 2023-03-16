@@ -15,8 +15,10 @@ $breakpoints: (
 // Colors
 
 $colors: (
-  'applicationt': (
-    'gray-100': hsl(0, 0%, 85%)
+  'application': (
+    'gray-100': hsl(0, 0%, 98%),
+    'gray-200': hsl(240, 5%, 10%),
+    'red': hsl(0, 100%, 50%)
   ),
   'basic': (
     'black': hsl(0, 0%, 0%),

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Board should be rendered correctly. 1`] = `
+<div>
+  <div
+    class="board"
+  >
+    <div
+      class="board__row"
+    >
+      <div
+        class="square square--light"
+      >
+        <button
+          aria-label="Square 0"
+          class="square__button"
+        />
+      </div>
+      <div
+        class="square square--light right left"
+      >
+        <button
+          aria-label="Square 1"
+          class="square__button"
+        />
+      </div>
+      <div
+        class="square square--light"
+      >
+        <button
+          aria-label="Square 2"
+          class="square__button"
+        />
+      </div>
+    </div>
+    <div
+      class="board__row"
+    >
+      <div
+        class="square square--light top bottom"
+      >
+        <button
+          aria-label="Square 3"
+          class="square__button"
+        />
+      </div>
+      <div
+        class="square square--light top right bottom left"
+      >
+        <button
+          aria-label="Square 4"
+          class="square__button"
+        />
+      </div>
+      <div
+        class="square square--light top bottom"
+      >
+        <button
+          aria-label="Square 5"
+          class="square__button"
+        />
+      </div>
+    </div>
+    <div
+      class="board__row"
+    >
+      <div
+        class="square square--light"
+      >
+        <button
+          aria-label="Square 6"
+          class="square__button"
+        />
+      </div>
+      <div
+        class="square square--light right left"
+      >
+        <button
+          aria-label="Square 7"
+          class="square__button"
+        />
+      </div>
+      <div
+        class="square square--light"
+      >
+        <button
+          aria-label="Square 8"
+          class="square__button"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

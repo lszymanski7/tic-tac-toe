@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Score should be rendered correctly. 1`] = `
+<div>
+  <div
+    class="score"
+  >
+    <div
+      class="score__container"
+    >
+      <p
+        class="score__turn"
+        data-testid="player1-caption"
+      >
+        Player 1  [X]
+      </p>
+      <p
+        data-testid="player1-score"
+      >
+        0
+      </p>
+    </div>
+    <div
+      class="score__container"
+    >
+      <p
+        data-testid="draw-caption"
+      >
+        Draw
+      </p>
+      <p
+        data-testid="draw-score"
+      >
+        0
+      </p>
+    </div>
+    <div
+      class="score__container"
+    >
+      <p
+        class=""
+        data-testid="player2-caption"
+      >
+        Player 2  [O]
+      </p>
+      <p
+        data-testid="player2-score"
+      >
+        0
+      </p>
+    </div>
+  </div>
+</div>
+`;

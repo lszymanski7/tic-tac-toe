@@ -1,18 +1,8 @@
 // ================================================================================================
-// Flexbox styles
+// Light theme styles
 // ================================================================================================
 
-.flexbox-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.flexbox-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.fullscreen {
-  height: 100vh;
-  width: 100%;
+.theme-light {
+  background: map-get($colors, 'basic', 'white');
+  color: map-get($colors, 'basic', 'black');
 }
