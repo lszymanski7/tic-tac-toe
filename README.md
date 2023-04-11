@@ -21,7 +21,7 @@
 
 <!-- TIC-TAC-TOE -->
 # Tic-Tac-Toe
-Tic-tac-toe is one of the most famous strategy games in the world. It's played by two players on a 3x3 board. Each of them aims to win by marking three squares in one line with the same symbol - X or O. This application is an implementation of this game and allows you to play with your friends without using paper and pencil.
+Tic-tac-toe is one of the most famous strategy games in the world. It's played by two players on a three-by-three board. Each of them aims to win by marking three squares in one line with the same symbol - X or O. This application is an implementation of this game and allows you to play with your friends without using paper and pencil.
 
 🚀 **Live demo:** <a href="https://lszymanski7-tic-tac-toe.netlify.app">https://lszymanski7-tic-tac-toe.netlify.app</a>
 
@@ -39,7 +39,7 @@ Tic-tac-toe is one of the most famous strategy games in the world. It's played b
 
 <!-- GAME RULES -->
 ## Game Rules
-The game is played on a 3x3 board. Two players take turns marking empty squares with their symbol - X or O. In each game, the first move belongs to a different player to even the odds of winning. If one of the players marks three squares in a line with his symbol, that player wins. The game also ends when all the squares are marked and no one has a winning combination (Fig. 1.) - then it's a draw.
+The game is played on a three-by-three board. Two players take turns marking empty squares with their symbol - X or O. In each game, the first move belongs to a different player to even the odds of winning. If one of the players marks three squares in a line with his symbol, that player wins. The game also ends when all the squares are marked and no one has a winning combination (Fig. 1.) - then it's a draw.
 
 <div align="center">
 
