@@ -27,4 +27,4 @@ const checkWinner = (board) => {
     return null
 }
 
-export { checkWinner as default }
+export default checkWinner

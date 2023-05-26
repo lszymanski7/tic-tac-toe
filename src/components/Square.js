@@ -48,4 +48,4 @@ Square.propTypes = {
     winningLine: PropTypes.bool.isRequired
 }
 
-export { Square as default }
+export default Square

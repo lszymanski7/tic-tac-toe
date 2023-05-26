@@ -47,4 +47,4 @@ Board.propTypes = {
     winner: PropTypes.object
 }
 
-export { Board as default }
+export default Board

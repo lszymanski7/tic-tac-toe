@@ -46,4 +46,4 @@ Score.propTypes = {
     turn: PropTypes.string.isRequired
 }
 
-export { Score as default }
+export default Score
