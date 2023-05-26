@@ -30,4 +30,4 @@ const Header = () => {
     )
 }
 
-export { Header as default }
+export default Header

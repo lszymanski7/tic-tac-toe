@@ -192,4 +192,4 @@ const Game = () => {
     )
 }
 
-export { Game as default }
+export default Game
