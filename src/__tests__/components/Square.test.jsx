@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Square from '../../components/Square'
-import { ThemeProvider } from '../../contexts/theme-context'
+import { ThemeProvider } from '../../contexts/ThemeContext'
 
 const props = {
     animation: 'scale',

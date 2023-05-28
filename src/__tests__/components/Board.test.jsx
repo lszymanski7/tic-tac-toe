@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Board from '../../components/Board'
-import { ThemeProvider } from '../../contexts/theme-context'
+import { ThemeProvider } from '../../contexts/ThemeContext'
 
 const props = {
     animation: 'scale',
