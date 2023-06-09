@@ -1,11 +1,8 @@
 // ================================================================================================
-// Fullscreen styles
+// Theme (dark)
 // ================================================================================================
 
-.fullscreen {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  @include user-select(none);
+.theme-dark {
+  background: map-get($colors, 'application', 'gray-200');
+  color: map-get($colors, 'application', 'gray-100');
 }
