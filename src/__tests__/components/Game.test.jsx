@@ -4,8 +4,8 @@ import Game from '../../components/Game'
 import { ThemeProvider } from '../../contexts/ThemeContext'
 
 describe('Game', () => {
-    it('should be rendered correctly.', () => {
-        const { container } = render(<Game />, { wrapper: ThemeProvider })
-        expect(container).toMatchSnapshot()
-    })
+  it('should be rendered correctly.', () => {
+    const { container } = render(<Game />, { wrapper: ThemeProvider })
+    expect(container).toMatchSnapshot()
+  })
 })
