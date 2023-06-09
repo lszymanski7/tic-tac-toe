@@ -1,8 +1,11 @@
 // ================================================================================================
-// Dark theme styles
+// Display Modes
 // ================================================================================================
 
-.theme-dark {
-  background: map-get($colors, 'application', 'gray-200');
-  color: map-get($colors, 'application', 'gray-100');
+.fullscreen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  @include user-select(none);
 }

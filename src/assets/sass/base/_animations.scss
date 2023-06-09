@@ -2,8 +2,6 @@
 // Animations
 // ================================================================================================
 
-// Blink animation
-
 .blink {
   animation-delay: 400ms;
   animation-duration: 600ms;
@@ -24,8 +22,6 @@
   }
 }
 
-// Fade animation
-
 .fade {
   animation-duration: 300ms;
   animation-fill-mode: forwards;
@@ -42,8 +38,6 @@
     opacity: 0.25;
   }
 }
-
-// Scale animation
 
 .scale {
   animation-duration: 200ms;
